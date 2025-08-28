@@ -1,0 +1,65 @@
+{% extends 'pattern_library/_base_pattern_library.html' %}
+{% block page_content %}
+{% include "pattern_library/pagebasics.html" with pagetitle="Welcome to PROJECT NAME Pattern Library" %}
+<div class="row">
+    {% include "pattern_library/patternlibrarynav.html" with open_nav="customize" %}
+    <div class="col-8">
+        <main>
+            <div class="ps-lg-4 m-lg-4">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <h1 class="display-1" id="content">Templates - Platonic Organisms, Organisms and Molecules</h1>
+                </div>
+                <p class="lead">Use AIUI's 'templates' best practice to build a page's html.</p>
+                <p>
+                    Best practice here is to use the <a href="https://bradfrost.com/blog/post/atomic-web-design/">Atomic
+                        Design</a> principles. This is based on the idea of <em>atoms</em> at the bottom of the template
+                    hiearchy consisting of the html, css and various js libraries that we use. Next are the
+                    <em>molecules</em>, bringing together a number of atoms (html tags, css classes, scripts, etc.) to
+                    create a single display item such as a submit button.
+                </p>
+                <p>
+                    At the top are the <em>organisms</em> formed by bringing together a range of molecules to create an
+                    interface - in this case a web page. Here we will look at the Django templates that move from
+                    <em>molecular</em> level to the complete <em>organism</em>. This will focus primarily at the
+                    <em>molecular level</em> but will also include some <em>organism</em> examples to demonstrate how
+                    this is all brought together.
+                </p>
+                <p>
+                    We will start with some of the larger <em>molecules</em> (probably better
+                    described as <em>platonic organisms</em> taken from the notion of Platonic
+                    ideal forms) and work our way down to smaller and smaller molecules.
+                </p>
+            </div>
+            <h2><em>Platonic</em> Organisms</h2>
+            <p>
+                These are the <strong>base</strong> templates from which many of our other templates will inherit traits
+                and shape them for specific requirements. They can be considered ideal forms upon which other parts of a
+                site can be base - thus the <code>_base</code> that precedes their naming.
+            </p>
+            <section id="base-template">
+                {% include "pattern_library/customize/templates/project_base_template.html" %}
+            </section>
+            <section id="base-list-template">
+                {% include "pattern_library/customize/templates/project_base_list_template.html" %}
+            </section>
+            <section id="base-detail-template">
+                {% include "pattern_library/customize/templates/project_base_detail_template.html" %}
+            </section>
+            <section id="base-form-template">
+                {% include "pattern_library/customize/templates/project_base_form_template.html" %}
+            </section>
+            <h2>Organisms</h2>
+            <p>
+                These are examples of templates that inherit from our <em>Platonic Organism</em>
+                templates realising actual complete html pages.
+            </p>
+            <h2>Molecules</h2>
+            <p>
+                These are templates that, along with our <em>Platonic Organism</em>
+                templates, help construct complete html pages.
+            </p>
+        </main>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,625 @@
+/*------------------------------------
+- COLOR hb-primary-brand colours
+- CONTENTS
+
+-- Base colours in root
+    - SWATCH - individual hsl values with calculations for variations.
+    - key primary colours
+    - alert primary colours
+    - badge primary colours
+    - link button primary colours
+    - btn primary colours
+    - list group item primary colours
+    - table primary colours
+    - link primary colours
+
+-- Component colours
+    - SWATCH (background-color and color from the light and dark variations)
+    - alert colours
+    - badge colours
+    - link button colours
+    - btn colours
+    - list group item primary colours
+    - table primary colours
+    - link primary colours
+------------------------------------*/
+
+:root {
+    /********** HB PRIMARY **********/
+    /* primary colours base SWATCH HSL values */
+    --hb-primary-swatch-brand-h: 225;
+    --hb-primary-swatch-brand-s: 7%;
+    --hb-primary-swatch-brand-l: 10%;
+    /* primary colours dark variation calculations could be performed on any of hsl. */
+    --hb-primary-swatch-brand-dark1-l-difference: 10%;
+    --hb-primary-swatch-brand-dark2-l-difference: 20%;
+    --hb-primary-swatch-brand-dark3-l-difference: 30%;
+    --hb-primary-swatch-brand-dark4-l-difference: 40%;
+    --hb-primary-swatch-brand-dark1-l: calc(var(--hb-primary-swatch-brand-l) - var(--hb-primary-swatch-brand-dark1-l-difference));
+    --hb-primary-swatch-brand-dark2-l: calc(var(--hb-primary-swatch-brand-l) - var(--hb-primary-swatch-brand-dark2-l-difference));
+    --hb-primary-swatch-brand-dark3-l: calc(var(--hb-primary-swatch-brand-l) - var(--hb-primary-swatch-brand-dark3-l-difference));
+    --hb-primary-swatch-brand-dark4-l: calc(var(--hb-primary-swatch-brand-l) - var(--hb-primary-swatch-brand-dark4-l-difference));
+    /* primary colours light variation calculations could be performed on any of hsl. */
+    --hb-primary-swatch-brand-light1-l-difference: 6%;
+    --hb-primary-swatch-brand-light2-l-difference: 20%;
+    --hb-primary-swatch-brand-light3-l-difference: 50%;
+    --hb-primary-swatch-brand-light4-l-difference: 85%;
+    --hb-primary-swatch-brand-light1-l: calc(var(--hb-primary-swatch-brand-l) + var(--hb-primary-swatch-brand-light1-l-difference));
+    --hb-primary-swatch-brand-light2-l: calc(var(--hb-primary-swatch-brand-l) + var(--hb-primary-swatch-brand-light2-l-difference));
+    --hb-primary-swatch-brand-light3-l: calc(var(--hb-primary-swatch-brand-l) + var(--hb-primary-swatch-brand-light3-l-difference));
+    --hb-primary-swatch-brand-light4-l: calc(var(--hb-primary-swatch-brand-l) + var(--hb-primary-swatch-brand-light4-l-difference));
+
+    /* key primary colours SWATCH */
+    --hb-primary-swatch-brand-color: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-l));
+    --hb-primary-swatch-brand-color-dark1: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-dark1-l));
+    --hb-primary-swatch-brand-color-dark2: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-dark2-l));
+    --hb-primary-swatch-brand-color-dark3: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-dark3-l));
+    --hb-primary-swatch-brand-color-dark4: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-dark4-l));
+    --hb-primary-swatch-brand-color-light1: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-light1-l));
+    --hb-primary-swatch-brand-color-light2: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-light2-l));
+    --hb-primary-swatch-brand-color-light3: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-light3-l));
+    --hb-primary-swatch-brand-color-light4: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s), var(--hb-primary-swatch-brand-light4-l));
+
+    /* key primary colours - after decisions which SWATCH colours to use */
+    --hb-primary-text-color: var(--hb-primary-swatch-brand-color-light4);
+    --hb-primary-alternative-text-color: var(--hb-primary-swatch-brand-color);
+    --hb-primary-background-color: var(--hb-primary-swatch-brand-color);
+    --hb-primary-alternative-background-color: var(--hb-primary-swatch-brand-color-light3);
+    --hb-primary-border-color: var(--hb-primary-swatch-brand-color-dark2);
+    --hb-primary-alternative-border-color: var(--hb-primary-background-color);
+    --hb-primary-focus-hover-background-color: var(--hb-primary-swatch-brand-color-dark1);
+    --hb-primary-box-shadow-color: var(--hb-primary-swatch-brand-color-light1);
+
+    /* COMPONENT Colours */
+    /* alert primary colours */
+    --hb-alert-primary-text-color: var(--hb-primary-alternative-text-color);
+    --hb-alert-primary-background-color: var(--hb-primary-alternative-background-color);
+    --hb-alert-primary-border-color: var(--hb-primary-border-color);
+    --hb-alert-primary-top-border-color: var(--hb-primary-alternative-border-color);
+    --hb-alert-link-text-color: #0f1a9a;
+    /* badge primary colours */
+    --hb-badge-primary-text-color: var(--hb-primary-text-color);
+    --hb-badge-primary-background-color: var(--hb-primary-background-color);
+    --hb-badge-primary-focus-hover-background-color: var(--hb-primary-focus-hover-background-color);
+    /* link button primary colours */
+    --hb-a-button-primary-focus-hover-background-color: var(--hb-primary-focus-hover-background-color);
+    /* btn primary colours */
+    --hb-btn-primary-text-color: var(--hb-primary-text-color);
+    --hb-btn-primary-background-color: var(--hb-primary-background-color);
+    --hb-btn-primary-border-color: var(--hb-primary-background-color);
+    --hb-btn-primary-hover-text-color: var(--hb-primary-text-color);
+    --hb-btn-primary-hover-background-color: var(--hb-primary-focus-hover-background-color);
+    --hb-btn-primary-hover-border-color: var(--hb-primary-focus-hover-background-color);
+    --hb-btn-primary-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    --hb-btn-primary-disabled-text-color: var(--hb-primary-text-color);
+    --hb-btn-primary-disabled-background-color: var(--hb-primary-background-color);
+    --hb-btn-primary-disabled-border-color: var(--hb-primary-background-color);
+    --hb-btn-primary-not-disabled-active-text-color: var(--hb-primary-text-color);
+    --hb-btn-primary-not-disabled-active-background-color: var(--hb-primary-focus-hover-background-color);
+    --hb-btn-primary-not-disabled-active-border-color: var(--hb-primary-border-color);
+    --hb-btn-primary-not-disabled-active-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    --hb-btn-primary-outline-text-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-background-color: transparent;
+    --hb-btn-primary-outline-border-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-hover-text-color: var(--hb-primary-text-color);
+    --hb-btn-primary-outline-hover-background-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-hover-border-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    --hb-btn-primary-outline-disabled-text-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-disabled-background-color: transparent;
+    --hb-btn-primary-outline-not-disabled-active-text-color: var(--hb-primary-text-color);
+    --hb-btn-primary-outline-not-disabled-active-background-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-not-disabled-active-border-color: var(--hb-primary-background-color);
+    --hb-btn-primary-outline-not-disabled-active-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    /* list group item primary colours */
+    --hb-list-group-item-primary-text-color: var(--hb-primary-text-color);
+    ;
+    --hb-list-group-item-primary-background-color: var(--hb-primary-background-color);
+    --hb-list-group-item-primary-hover-focus-text-color: var(--hb-primary-text-color);
+    --hb-list-group-item-primary-hover-focus-background-color: var(--hb-primary-focus-hover-background-color);
+    --hb-list-group-item-primary-active-text-color: var(--hb-primary-text-color);
+    --hb-list-group-item-primary-active-background-color: var(--hb-primary-background-color);
+    --hb-list-group-item-primary-active-border-color: var(--hb-primary-alternative-text-color);
+    /* table primary colours */
+    --hb-table-primary-background-color: var(--hb-primary-alternative-background-color);
+    --hb-table-primary-hover-background-color: var(--hb-primary-alternative-text-color);
+    --hb-table-child-primary-hover-text-color: var(--hb-primary-text-color);
+    --hb-table-child-primary-hover-background-color: var(--hb-primary-alternative-text-color);
+    /* link primary colours */
+    --hb-link-primary-text-color: var(--hb-primary-background-color);
+    --hb-link-primary-hover-background-color: #3846eb;
+}
+
+/* SWATCH */
+.bg-hb-primary {
+    background-color: var(--hb-primary-background-color) !important;
+}
+
+.bg-hb-primary-dark1 {
+    background-color: var(--hb-primary-swatch-brand-color-dark1) !important;
+}
+
+.bg-hb-primary-dark2 {
+    background-color: var(--hb-primary-swatch-brand-color-dark2) !important;
+}
+
+.bg-hb-primary-dark3 {
+    background-color: var(--hb-primary-swatch-brand-color-dark3) !important;
+}
+
+.bg-hb-primary-dark4 {
+    background-color: var(--hb-primary-swatch-brand-color-dark4) !important;
+}
+
+.bg-hb-primary-light1 {
+    background-color: var(--hb-primary-swatch-brand-color-light1) !important;
+}
+
+.bg-hb-primary-light2 {
+    background-color: var(--hb-primary-swatch-brand-color-light2) !important;
+}
+
+.bg-hb-primary-light3 {
+    background-color: var(--hb-primary-swatch-brand-color-light3) !important;
+}
+
+.bg-hb-primary-light4 {
+    background-color: var(--hb-primary-swatch-brand-color-light4) !important;
+}
+
+.text-hb-primary {
+    color: var(--hb-primary-background-color) !important;
+}
+
+.text-hb-primary-dark1 {
+    color: var(--hb-primary-swatch-brand-color-dark1) !important;
+}
+
+.text-hb-primary-dark2 {
+    color: var(--hb-primary-swatch-brand-color-dark2) !important;
+}
+
+.text-hb-primary-dark3 {
+    color: var(--hb-primary-swatch-brand-color-dark3) !important;
+}
+
+.text-hb-primary-dark4 {
+    color: var(--hb-primary-swatch-brand-color-dark4) !important;
+}
+
+.text-hb-primary-light1 {
+    color: var(--hb-primary-swatch-brand-color-light1) !important;
+}
+
+.text-hb-primary-light2 {
+    color: var(--hb-primary-swatch-brand-color-light2) !important;
+}
+
+.text-hb-primary-light3 {
+    color: var(--hb-primary-swatch-brand-color-light3) !important;
+}
+
+.text-hb-primary-light4 {
+    color: var(--hb-primary-swatch-brand-color-light4) !important;
+}
+
+/* ALERT */
+.alert-hb-primary {
+    color: var(--hb-alert-primary-text-color);
+    background-color: var(--hb-alert-primary-background-color);
+    border-color: var(--hb-alert-primary-top-border-color);
+}
+
+.alert-hb-primary hr {
+    border-top-color: var(--hb-alert-primary-top-border-color);
+}
+
+.alert-hb-primary .alert-link {
+    color: var(--hb-alert-link-text-color);
+}
+
+/* BADGE */
+.badge-hb-primary {
+    color: var(--hb-badge-primary-text-color);
+    background-color: var(--hb-badge-primary-background-color);
+}
+
+.badge-hb-primary[href]:hover,
+.badge-hb-primary[href]:focus {
+    color: var(--hb-badge-primary-text-color);
+    background-color: var(--hb-badge-primary-focus-hover-background-color);
+}
+
+.bg-hb-primary {
+    background-color: var(--hb-primary-background-color) !important;
+}
+
+/* LINK BUTTON */
+a.bg-hb-primary:hover,
+a.bg-hb-primary:focus,
+
+/* BUTTON */
+button.bg-hb-primary:hover,
+button.bg-hb-primary:focus {
+    background-color: var(--hb-a-button-primary-focus-hover-background-color) !important;
+}
+
+/* PRIMARY */
+.border-hb-primary {
+    /* border-color: var(--hb-primary-swatch-brand-color-light1) !important; */
+    border-color: var(--hb-primary-background-color) !important;
+}
+
+/* BTN */
+.btn-hb-primary {
+    color: var(--hb-btn-primary-text-color);
+    background-color: var(--hb-btn-primary-background-color);
+    border-color: var(--hb-btn-primary-border-color);
+}
+
+.btn-hb-primary:hover {
+    color: var(--hb-btn-primary-hover-text-color);
+    background-color: var(--hb-btn-primary-hover-background-color);
+    border-color: var(--hb-btn-primary-hover-border-color);
+}
+
+.btn-hb-primary:focus,
+.btn-hb-primary.focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-btn-primary-focus-box-shadow-color);
+}
+
+.btn-hb-primary.disabled,
+.btn-hb-primary:disabled {
+    color: var(--hb-btn-primary-disabled-text-color);
+    background-color: var(--hb-btn-primary-disabled-background-color);
+    border-color: var(--hb-btn-primary-disabled-border-color)f;
+}
+
+.btn-hb-primary:not(:disabled):not(.disabled):active,
+.btn-hb-primary:not(:disabled):not(.disabled).active,
+.show>.btn-hb-primary.dropdown-toggle {
+    color: var(--hb-btn-primary-not-disabled-active-text-color);
+    background-color: var(--hb-btn-primary-not-disabled-active-background-color);
+    border-color: var(--hb-btn-primary-not-disabled-active-border-color);
+}
+
+.btn-hb-primary:not(:disabled):not(.disabled):active:focus,
+.btn-hb-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-hb-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-btn-primary-not-disabled-active-focus-box-shadow-color);
+}
+
+.btn-outline-hb-primary {
+    color: var(--hb-btn-primary-outline-text-color);
+    background-color: var(--hb-btn-primary-outline-background-color);
+    border-color: var(--hb-btn-primary-outline-border-color);
+}
+
+.btn-outline-hb-primary:hover {
+    color: var(--hb-btn-primary-outline-hover-text-color);
+    background-color: var(--hb-btn-primary-outline-hover-background-color);
+    border-color: var(--hb-btn-primary-outline-hover-border-color);
+}
+
+.btn-outline-hb-primary:focus,
+.btn-outline-hb-primary.focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-btn-primary-outline-focus-box-shadow-color);
+}
+
+.btn-outline-hb-primary.disabled,
+.btn-outline-hb-primary:disabled {
+    color: var(--hb-btn-primary-outline-disabled-text-color);
+    background-color: var(--hb-btn-primary-outline-disabled-background-color);
+}
+
+.btn-outline-hb-primary:not(:disabled):not(.disabled):active,
+.btn-outline-hb-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-hb-primary.dropdown-toggle {
+    color: var(--hb-btn-primary-outline-not-disabled-active-text-color);
+    background-color: var(--hb-btn-primary-outline-not-disabled-active-background-color);
+    border-color: var(--hb-btn-primary-outline-not-disabled-active-border-color);
+}
+
+.btn-outline-hb-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-hb-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-hb-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-btn-primary-outline-not-disabled-active-focus-box-shadow-color);
+}
+
+/* list group item */
+.list-group-item-hb-primary {
+    color: var(--hb-list-group-item-primary-text-color);
+    background-color: var(--hb-list-group-item-primary-background-color);
+}
+
+.list-group-item-hb-primary.list-group-item-action:hover,
+.list-group-item-hb-primary.list-group-item-action:focus {
+    color: var(--hb-list-group-item-primary-hover-focus-text-color);
+    background-color: var(--hb-list-group-item-primary-hover-focus-background-color);
+}
+
+.list-group-item-hb-primary.list-group-item-action.active {
+    color: var(--hb-list-group-item-primary-active-text-color);
+    background-color: var(--hb-list-group-item-primary-active-background-color);
+    border-color: var(--hb-list-group-item-primary-active-border-color);
+}
+
+/* table */
+.table-hb-primary,
+.table-hb-primary>th,
+.table-hb-primary>td {
+    background-color: var(--hb-table-primary-background-color);
+}
+
+.table-hover .table-hb-primary:hover {
+    background-color: var(--hb-table-primary-hover-background-color);
+}
+
+.table-hover .table-hb-primary:hover>td,
+.table-hover .table-hb-primary:hover>th {
+    color: var(--hb-table-child-primary-hover-text-color);
+    background-color: var(--hb-table-child-primary-hover-background-color);
+}
+
+/* link */
+a.text-hb-primary {
+    color: var(--hb-link-primary-text-color) !important;
+}
+
+a.text-hb-primary:hover,
+a.text-hb-primary:focus {
+    color: var(--hb-link-primary-hover-background-color) !important;
+}
+
+/* Main content panel adjustments */
+.main-panel {
+    background-color: var(--hb-primary-swatch-brand-color-light1);
+    flex-grow: 1;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+    padding: 1.5rem;
+}
+
+.page-body-wrapper {
+    display: flex;
+    flex-grow: 1;
+    min-height: calc(100vh - 60px);
+    /* Adjust 60px to match navbar height */
+}
+
+/* SIDEBAR */
+.sidebar.offcanvas {
+    background-color: var(--hb-primary-swatch-brand-color-light1);
+    border-right: 1px solid var(--hb-primary-swatch-brand-color-light2);
+}
+
+.sidebar .offcanvas-header {
+    border-bottom: 1px solid var(--hb-primary-border-color);
+    padding: 1rem;
+}
+
+.sidebar .sidebar-brand {
+    text-decoration: none;
+    color: var(--hb-primary-text-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .offcanvas-body {
+    padding: 0;
+}
+
+.sidebar .nav {
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar .nav .nav-item {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar .nav .nav-item .nav-link {
+    color: var(--hb-primary-swatch-brand-color-light3);
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0.75rem 1.5rem;
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.sidebar .nav .nav-item .nav-link:hover {
+    color: var(--hb-primary-text-color);
+}
+
+.sidebar .nav .nav-item.active>.nav-link,
+.sidebar .nav .nav-item .nav-link.active {
+    color: var(--hb-primary-text-color);
+}
+
+.sidebar .nav .nav-item.active {
+    background-color: var(--hb-primary-focus-hover-background-color);
+    border-radius: 0.25rem;
+    margin: 0.25rem 1rem;
+}
+
+.sidebar .nav .nav-item.nav-category {
+    color: var(--hb-primary-swatch-brand-color-light2);
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sidebar .sub-menu {
+    padding-left: 1.5rem;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;
+    border-radius: 0.25rem;
+}
+
+.sidebar .sub-menu .nav-item {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.sidebar .sub-menu .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9em;
+}
+
+@media (min-width: 992px) {
+    .main-panel {
+        width: calc(100% - 280px);
+        transition: width 0.2s ease-in-out;
+    }
+
+    .sidebar.offcanvas-lg {
+        width: 280px;
+    }
+}
+
+/* CHAT INTERFACE */
+.chat-container {
+    height: calc(100vh - 160px);
+    /* Full viewport height minus navbar and footer */
+}
+
+.chat-header {
+    background-color: transparent;
+    border-bottom: none !important;
+}
+
+.chat-thread {
+    overflow-y: auto;
+}
+
+.response-card,
+.prompt-card {
+    max-width: 70%;
+    border-radius: 1rem;
+    border: 1px solid var(--hb-primary-border-color);
+}
+
+.response-card {
+    background-color: var(--hb-primary-background-color);
+}
+
+.prompt-card {
+    background-color: hsl(235, 82%, 67%);
+    border-color: hsl(235, 82%, 67%);
+}
+
+.response-card .card-footer {
+    padding-top: 0;
+}
+
+.response-card .card-footer .btn {
+    color: var(--hb-primary-swatch-brand-color-light2);
+}
+
+.response-card .card-footer .btn:hover {
+    color: var(--hb-primary-text-color);
+    background-color: var(--hb-primary-focus-hover-background-color);
+}
+
+.chat-input-form {
+    background-color: var(--hb-primary-swatch-brand-color-light1);
+    border: 1.5px solid var(--hb-primary-border-color);
+    /* Add border */
+    border-radius: 0.75rem;
+    /* Optional: rounded corners */
+    display: flex;
+    /* Make children align horizontally */
+    align-items: center;
+    padding: 1rem;
+    /* Adjust padding as needed */
+    gap: 0.5rem;
+    /* Space between input and button */
+}
+
+.chat-input-form form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.chat-input-form .form-control {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--hb-primary-background-color);
+    color: var(--hb-primary-text-color);
+    border-color: var(--hb-primary-background-color);
+    /* resize: none; */
+}
+
+#button-send {
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.chat-input-form .form-control:focus {
+    background-color: var(--hb-primary-background-color);
+    color: var(--hb-primary-text-color);
+    border-color: hsl(235, 82%, 67%);
+    box-shadow: 0 0 0 0.2rem hsla(235, 82%, 77%, 0.25);
+}
+
+.chat-input-form .btn-primary {
+    background-color: hsl(235, 82%, 67%);
+    border-color: hsl(235, 82%, 67%);
+}
+
+.chat-input-form .btn-primary:hover {
+    background-color: hsl(235, 82%, 72%);
+    border-color: hsl(235, 82%, 72%);
+}
+
+.form-control {
+    background-color: var(--hb-primary-background-color);
+    color: white;
+}
+
+.form-control:focus {
+    background-color: var(--hb-primary-background-color);
+    color: white;
+}
+
+
+
+.form-select {
+    background-color: var(--hb-primary-background-color);
+}
+
+.card {
+    background-color: var(--hb-primary-swatch-brand-color-dark1);
+}
+
+.modal-content {
+    background-color: var(--hb-primary-background-color);
+    border-color: var(--hb-primary-background-color-light1);
+}

@@ -1,0 +1,4 @@
+<li class="nav-item nav-category">Conversation Threads</li>
+<div id="replace-chats-list" class='m-2' hx-get="{% url 'conversationthreads' %}" hx-trigger="newChatList from:body" hx-target="#replace-chats-list" hx-swap="innerHTML">
+    {% include "chats/list/chats_list.html" %}
+</div>

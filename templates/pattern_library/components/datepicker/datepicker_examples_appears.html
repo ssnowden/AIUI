@@ -1,0 +1,59 @@
+<h3 id="hb-primary-examples" class="m-lg-3">hb-datepicker Appears when click on button</h3>
+<div class="m-lg-2 border border-secondary rounded p-lg-1" id="ui-examples-primary-appears">
+    <input type="text" class="form-control form-control-lg" id="datepicker2" value="" name="date-picker-example-appears"
+        autocomplete="off">
+</div>
+<!-- brython -->
+<script type="text/python">
+    from browser import window
+
+    S = window.jQuery
+    S("#datepicker2").datepicker({
+        "dateFormat": "dd/mm/yy",
+        "changeMonth": True,
+        "changeYear": True,
+        "duration": "slow",
+        "minDate": 0,
+        "showAnim": "fold", 
+        "dayNamesMin": ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    })
+
+    def date_picker_input_click(ev):
+        S("#datepicker2").datepicker()
+
+    S("#datepicker2").on("click", date_picker_input_click)
+</script>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-examples-primary" class="alert alert-secondary">
+        {% filter force_escape %}<div class="m-lg-2 border border-secondary rounded p-lg-1"
+            id="ui-examples-primary-appears">
+            <input type="text" class="form-control form-control-lg" id="datepicker2" value=""
+                name="date-picker-example-appears" autocomplete="off">
+        </div>
+        <!-- brython -->
+        <script type="text/python">
+            from browser import window
+
+            S = window.jQuery
+            S("#datepicker2").datepicker({
+                "dateFormat": "dd/mm/yy",
+                "changeMonth": True,
+                "changeYear": True,
+                "duration": "slow",
+                "minDate": 0,
+                "showAnim": "fold", 
+                "dayNamesMin": ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            })
+
+            def date_picker_input_click(ev):
+                S("#datepicker2").datepicker()
+
+            S("#datepicker2").on("click", date_picker_input_click)
+        </script>{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">
+        This is code for a Datepicker that appears when an input box is clicked and saves the date
+        to the input box when one is selected. The really important part is the hb_datepicker.css
+        file where all the important stuff happens.
+    </figcaption>
+</figure>

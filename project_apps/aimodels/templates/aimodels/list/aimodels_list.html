@@ -1,0 +1,14 @@
+{% for aimodel in aimodels %}
+{% if forloop.first %}
+{% include "aimodels/list/aimodels_list_header.html" %}
+{% include "aimodels/images/aimodels.html" %}
+{% include "aimodels/list/aimodels_list_title.html" %}
+<div class="list-group list-group-flush">
+    {% endif %}
+    {% include "aimodels/list/aimodels_list_item.html" %}
+    {% if forloop.last %}
+</div>
+{% endif %}
+{% empty %}
+{% include "aimodels/list/aimodels_list_empty.html" %}
+{% endfor %}

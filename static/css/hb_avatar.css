@@ -1,0 +1,119 @@
+:root {
+    /********** HB AVATAR **********/
+    /* avatar primary colours */
+    --hb-avatar-primary-text-color: var(--hb-primary-text-color);
+    --hb-avatar-primary-background-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-border-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-hover-text-color: var(--hb-primary-text-color);
+    --hb-avatar-primary-hover-background-color: #0069db;
+    --hb-avatar-primary-hover-border-color: var(--hb-primary-focus-hover-background-color);
+    --hb-avatar-primary-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    --hb-avatar-primary-disabled-text-color: var(--hb-primary-text-color);
+    --hb-avatar-primary-disabled-background-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-disabled-border-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-not-disabled-active-text-color: var(--hb-primary-text-color);
+    --hb-avatar-primary-not-disabled-active-background-color: var(--hb-primary-focus-hover-background-color);
+    --hb-avatar-primary-not-disabled-active-border-color: #005bbc;
+    --hb-avatar-primary-not-disabled-active-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    --hb-avatar-primary-outline-text-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-background-color: transparent;
+    --hb-avatar-primary-outline-border-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-hover-text-color: var(--hb-primary-text-color);
+    --hb-avatar-primary-outline-hover-background-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-hover-border-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+    --hb-avatar-primary-outline-disabled-text-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-disabled-background-color: transparent;
+    --hb-avatar-primary-outline-not-disabled-active-text-color: var(--hb-primary-text-color);
+    --hb-avatar-primary-outline-not-disabled-active-background-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-not-disabled-active-border-color: var(--hb-primary-background-color);
+    --hb-avatar-primary-outline-not-disabled-active-focus-box-shadow-color: var(--hb-primary-box-shadow-color);
+}
+
+.avatar {
+    height: 16rem;
+    width: 16rem;
+}
+
+.border-avatar {
+    position: relative;
+    padding-top: 3rem;
+    padding-left: 0.25rem;
+    margin: 0.5rem;
+}
+
+.avatar-hb-primary {
+    fill: var(--hb-avatar-primary-text-color);
+    color: var(--hb-avatar-primary-text-color);
+    background-color: var(--hb-avatar-primary-background-color);
+    border-color: var(--hb-avatar-primary-border-color);
+}
+
+.avatar-hb-primary:hover {
+    color: var(--hb-avatar-primary-hover-text-color);
+    background-color: var(--hb-avatar-primary-hover-background-color);
+    border-color: var(--hb-avatar-primary-hover-border-color);
+}
+
+.avatar-hb-primary:focus,
+.avatar-hb-primary.focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-avatar-primary-focus-box-shadow-color);
+}
+
+.avatar-hb-primary.disabled,
+.avatar-hb-primary:disabled {
+    color: var(--hb-avatar-primary-disabled-text-color);
+    background-color: var(--hb-avatar-primary-disabled-background-color);
+    border-color: var(--hb-avatar-primary-disabled-border-color)f;
+}
+
+.avatar-hb-primary:not(:disabled):not(.disabled):active,
+.avatar-hb-primary:not(:disabled):not(.disabled).active,
+.show>.avatar-hb-primary.dropdown-toggle {
+    color: var(--hb-avatar-primary-not-disabled-active-text-color);
+    background-color: var(--hb-avatar-primary-not-disabled-active-background-color);
+    border-color: var(--hb-avatar-primary-not-disabled-active-border-color);
+}
+
+.avatar-hb-primary:not(:disabled):not(.disabled):active:focus,
+.avatar-hb-primary:not(:disabled):not(.disabled).active:focus,
+.show>.avatar-hb-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-avatar-primary-not-disabled-active-focus-box-shadow-color);
+}
+
+.avatar-outline-hb-primary {
+    color: var(--hb-avatar-primary-outline-text-color);
+    background-color: var(--hb-avatar-primary-outline-background-color);
+    border-color: var(--hb-avatar-primary-outline-border-color);
+}
+
+.avatar-outline-hb-primary:hover {
+    color: var(--hb-avatar-primary-outline-hover-text-color);
+    background-color: var(--hb-avatar-primary-outline-hover-background-color);
+    border-color: var(--hb-avatar-primary-outline-hover-border-color);
+}
+
+.avatar-outline-hb-primary:focus,
+.avatar-outline-hb-primary.focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-avatar-primary-outline-focus-box-shadow-color);
+}
+
+.avatar-outline-hb-primary.disabled,
+.avatar-outline-hb-primary:disabled {
+    color: var(--hb-avatar-primary-outline-disabled-text-color);
+    background-color: var(--hb-avatar-primary-outline-disabled-background-color);
+}
+
+.avatar-outline-hb-primary:not(:disabled):not(.disabled):active,
+.avatar-outline-hb-primary:not(:disabled):not(.disabled).active,
+.show>.avatar-outline-hb-primary.dropdown-toggle {
+    color: var(--hb-avatar-primary-outline-not-disabled-active-text-color);
+    background-color: var(--hb-avatar-primary-outline-not-disabled-active-background-color);
+    border-color: var(--hb-avatar-primary-outline-not-disabled-active-border-color);
+}
+
+.avatar-outline-hb-primary:not(:disabled):not(.disabled):active:focus,
+.avatar-outline-hb-primary:not(:disabled):not(.disabled).active:focus,
+.show>.avatar-outline-hb-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem var(--hb-avatar-primary-outline-not-disabled-active-focus-box-shadow-color);
+}

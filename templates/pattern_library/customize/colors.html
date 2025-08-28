@@ -1,0 +1,39 @@
+{% extends 'pattern_library/_base_pattern_library.html' %}
+{% block page_content %}
+{% include "pattern_library/pagebasics.html" with pagetitle="Welcome to the PROJECT NAME Pattern Library" %}
+<div class="row">
+    {% include "pattern_library/patternlibrarynav.html" with open_nav="customize" %}
+    <div class="col-8">
+        <main>
+            <div class="ps-lg-4 m-lg-4">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <h1 class="display-1" id="content">Colours</h1>
+                </div>
+                <p class="lead">Use AIUI's custom css styles for branding colours.</p>
+            </div>
+            <section id="project-color-theme-test-swatch">
+                {% include "pattern_library/customize/color_theme_test_swatch.html" %}
+            </section>
+            <section id="project-color-theme-swatch">
+                {% include "pattern_library/customize/color_theme_swatch.html" %}
+            </section>
+            <section id="project-orion-color-theme">
+                <h2>Basic Colour Branding for Project Orion</h2>
+            </section>
+            <section id="project-orion-text">
+                <h2>Text Colours</h2>
+            </section>
+            <section id="project-orion-background">
+                <h2>Background Colours</h2>
+            </section>
+            <section id="project-orion-effects">
+                <h2>Colours for emphasis on active, focus, and hover</h2>
+            </section>
+            <section id="creating-a-color-theme">
+                {% include "pattern_library/customize/create_color_theme.html" %}
+            </section>
+        </main>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

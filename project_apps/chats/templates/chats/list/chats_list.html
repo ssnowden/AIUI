@@ -1,0 +1,15 @@
+{% for conversation_thread in conversation_threads %}
+<li class="nav-item d-flex justify-content-between" data-bs-dismiss="offcanvas">
+    <a class="nav-link" href="#" hx-get="{% url 'conversationthread_detail' conversation_thread.id %}" hx-target="#replace-chat-container" hx-swap="outerHTML" id="id-{{ conversation_thread.id }}" data-bs-dismiss="offcanvas">
+        <i class="bi bi-chat-left-text me-2"></i>
+        {{ conversation_thread.name|truncatechars:25 }}
+    </a>
+    <a href="#" hx-get="{% url 'conversation_thread_delete' conversation_thread.id %}" hx-target="#delete-chat-modal" hx-swap="innerHTML" class="btn btn-danger btn-rounded mt-2" id="delete-chat-{{ conversation_thread.id }}" data-bs-toggle="modal" data-bs-target="#delete-chat-modal" title="Delete Chat: {{ conversation_thread.name }}">
+        <i class="bi bi bi-trash"></i>
+    </a>
+</li>
+{% empty %}
+<li class="nav-item">
+    <span class="nav-link text-muted">No chats yet.</span>
+</li>
+{% endfor %}

@@ -1,0 +1,16 @@
+{% extends "account/_account_base_form.html" %}
+
+{% block title %}{{ project_name }} - Update My Personal Details{% endblock title %}
+
+{% block form_content %}
+<h5 class="card-title text-center">Edit Personal Details</h5>
+<form class="pt-3" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <div class="d-flex align-items-center">
+        <a href="{% url 'profile_detail' user.uuid %}" class="btn btn-hb-primary m-2">Return
+            to Profile</a>
+        {% include "includes/submit_button.html" with button_id="update-details" button_text="Update My Details" %}
+    </div>
+</form>
+{% endblock form_content %}

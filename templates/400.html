@@ -1,0 +1,31 @@
+{% extends "_base_form.html" %}
+
+{% block title %}Error 400 Bad Request{% endblock title %}
+
+{% block col_class %}class="col-md-6 mx-auto"{% endblock col_class %}
+{% block form_content %}
+{% include "includes/alert_icons.html" %}
+<div class="row">
+    <h1 class="card-title text-center text-danger">
+        Suspicious Operation
+    </h1>
+    <div class="card-text">
+        <p class="lead text-center">You don't appear to have attempted to perform an action that has security
+            implications.
+        </p>
+        <div class="alert alert-danger" role="alert">
+            <h5 class="alert-heading text-center">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                    <use xlink:href="#exclamation-triangle-fill" />
+                </svg>
+                This has been noted!
+            </h5>
+            <hr>
+            <p>
+                Further attempts to perform suspicious activities
+                may lead to your account being suspended whilst your activities are investigated.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock form_content %}

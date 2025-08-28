@@ -1,0 +1,5 @@
+<form class="pt-3" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    {% include "includes/submit_button.html" with button_id=form_button_id button_text=form_button_text %}
+</form>

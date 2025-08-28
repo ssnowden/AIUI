@@ -1,0 +1,22 @@
+<form hx-post="{% url 'conversationthread_create' %}" hx-target="#replace-chat-container" hx-swap="innerHTML" id="chat-create-form-container">
+    {% csrf_token %}
+    {{ new_chat_form.errors }}
+    {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+    {% endfor %}
+
+    <div class="" id="new-chat-form">
+        <div class="row">
+            <div class="col-md-12">
+                {{ new_chat_form.name.label }} {{ new_chat_form.name.errors.as_ul }} {{ new_chat_form.name }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ new_chat_form.aimodel.label }} {{ new_chat_form.aimodel.errors.as_ul }} {{ new_chat_form.aimodel }}
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    {% include "includes/submit_button_htmx_modal.html" with button_id="id-save-chat" button_text="Start chat" %}
+</form>

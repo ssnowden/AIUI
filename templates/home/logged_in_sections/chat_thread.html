@@ -1,0 +1,6 @@
+<div class="chat-thread flex-grow-1 p-3">
+    {% for conversation_item in latest_conversation.conversation_items.all %}
+    {% include "home/logged_in_sections/chat_thread_item.html" %}
+    {% empty %}
+    {% endfor %}
+</div>

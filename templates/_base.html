@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}{{ project_name }}{% endblock title %}</title>
+    {% include "includes/favicons.html" %}
+    {% block meta_tags %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock meta_tags %}
+
+    <!-- Global Styles:css -->
+    {% block site_css %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> -->
+    <link rel="stylesheet" href="{% static 'css/hb_primary_branding.css' %}">
+    {% endblock site_css %}
+
+
+    <!-- icons:css -->
+    {% block hb_icon_css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    {% endblock hb_icon_css %}
+
+    <!-- standard:component css -->
+    {% block hb_components_css %}
+    {% endblock hb_components_css %}
+
+    <!-- extras that a page or section may require -->
+    {% block extra_head_css %}{% endblock extra_head_css %}
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+
+<body onload="brython({debug:1})" class="bg-hb-primary text-hb-primary-light4">
+    <div class="container-scroller bg-hb-primary">
+        {% block content %}
+        <div class="col-lg-4">{% block sidebar %}{% endblock %}</div>
+        <div class="col-lg-8">{% block main_content %}{% endblock %}</div>
+        {% endblock content %}
+        {% block modals %}{% endblock modals %}
+    </div>
+
+    {% block site_js %}
+    <!-- brython -->
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10/brython_stdlib.js"></script>
+    <!-- jquery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.5/dist/htmx.min.js" integrity="sha384-t4DxZSyQK+0Uv4jzy5B0QyHyWQD2GFURUmxKMBVww9+e2EJ0ei/vCvv7+79z0fkr" crossorigin="anonymous"></script>
+    {% endblock site_js %}
+
+    <!-- extras that a page or section may require -->
+    {% block extra_body_js %}{% endblock extra_body_js %}
+    {% block extra_body %}{% endblock extra_body %}
+</body>
+
+</html>

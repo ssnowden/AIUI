@@ -1,0 +1,22 @@
+<h4>The Conversation</h4>
+
+<div class="chat-thread flex-grow-1 p-3">
+    {% for conversation_item in conversation_thread.conversation_items.all %}
+    <div class="row justify-content-end">
+        <div class="row justify-content-start">
+            <div class="prompt-card mb-2 p-2">
+                {{ conversation_item.prompt }}.
+                div>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="response-card mb-2 p-2">
+                {{ conversation_item.response }}.
+            </div>
+        </div>
+        {% empty %}
+        <p class="list-group-item list-group-item-action list-group-item-warning">
+            No conversation items for this conversation thread
+        </p>
+        {% endfor %}
+    </div>

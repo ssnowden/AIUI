@@ -1,0 +1,39 @@
+<h3 id="hb-primary-examples" class="m-lg-3">hb-datepicker</h3>
+<div class="m-lg-2 border border-secondary rounded p-lg-1" id="ui-examples-primary">
+    <div id="datepicker"></div>
+</div>
+<!-- brython -->
+<script type="text/python">
+    from browser import window
+
+    S = window.jQuery
+    S("#datepicker").datepicker({
+        "inline": True,
+        "dateFormat": "dd/mm/yy",
+        "changeMonth": True,
+        "changeYear": True,
+        "dayNamesMin": ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    })
+</script>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-examples-primary" class="alert alert-secondary">
+        {% filter force_escape %}<div id="datepicker"></div>
+        <!-- brython -->
+        <script type="text/python">
+            from browser import window
+
+            S = window.jQuery
+            S("#datepicker").datepicker({
+                "inline": True,
+                "dateFormat": "dd/mm/yy",
+                "changeMonth": True,
+                "changeYear": True,
+                "dayNamesMin": ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            })
+        </script>{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">
+        This is just the code for the Datepicker. The really important part is the
+        hb_datepicker.css file where all the important stuff happens.
+    </figcaption>
+</figure>

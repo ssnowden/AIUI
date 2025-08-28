@@ -1,0 +1,13 @@
+<div class="chat-container d-flex flex-column h-100">
+    {% if latest_conversation %}
+    <div id="replace-chat-container" hx-get="{% url 'conversationthread_detail' latest_conversation.id %}" hx-trigger="deleteChat from:body" hx-target="#replace-chat-container" hx-swap="outerHTML">
+        {% include "home/logged_in_sections/chat_header.html" %}
+        {% include "home/logged_in_sections/chat_thread.html" %}
+        {% include "home/logged_in_sections/chat_prompt.html" %}
+    </div>
+    {% else %}
+    <div id="replace-chat-container">
+        {% include "home/logged_in_sections/start_first_chat.html" %}
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,20 @@
+<a href="{% url 'patternlibrary_alert' %}" class="text-decoration-none">
+    {% if show_components == "False" %}
+    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse"
+        data-bs-target="#components-collapse" aria-expanded="false">
+        Components
+    </button>
+</a>
+<div class="collapse" id="components-collapse">
+    {% include "pattern_library/components/component_nav_items.html" %}
+</div>
+{% else %}
+<button class="btn d-inline-flex align-items-center rounded" data-bs-toggle="collapse"
+    data-bs-target="#components-collapse" aria-expanded="true" aria-current="true">
+    Components
+</button>
+</a>
+<div class="collapse show" id="components-collapse">
+    {% include "pattern_library/components/component_nav_items.html" %}
+</div>
+{% endif %}

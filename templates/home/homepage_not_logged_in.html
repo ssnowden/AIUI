@@ -1,0 +1,14 @@
+<main>
+    <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">{{ project_name }} Features</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            {% include "home/not_logged_in_sections/section1.html" %}
+            {% include "home/not_logged_in_sections/section2.html" %}
+            {% include "home/not_logged_in_sections/section3.html" %}
+        </div>
+    </div>
+    To be able to use the {{ project_name }} site you must have a {{ project_name }} Account and be signed in.
+    <br><br><br>
+    So, <a href="{% url 'account_login' %}" id="signin">Sign in</a>...
+    ...or <a href="{% url 'account_signup' %}" id="signup">Sign Up</a>
+</main>

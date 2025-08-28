@@ -1,0 +1,15 @@
+<h4>Details for AI Model: {{ aimodel }} (
+    {% if aimodel.is_active %}
+    Model is active
+    {% else %}
+    Model is inactive
+    {% endif %})
+
+
+    <a href="{% url 'aimodel_update' aimodel.id %}" class="btn btn-hb-primary btn-rounded mt-2 mt-xl-0" id="edit-aimodel" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit AI Model">
+        <i class="bi bi-pencil-square"></i>
+    </a>
+    <a href="{% url 'aimodel_delete' aimodel.id %}" class="btn btn-danger btn-rounded mt-2 mt-xl-0" id="delete-aimodel" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete AI Model">
+        <i class="bi bi bi-trash"></i>
+    </a>
+</h4>

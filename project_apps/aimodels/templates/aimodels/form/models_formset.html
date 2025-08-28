@@ -1,0 +1,85 @@
+{% comment "REALLY ONLY NEEDS CHECKING THAT A TABLE IS A DESIRABLE FORMAT. THEN UNCOMMENT." %}
+{{ formset.management_form }}
+{{ formset.non_form_errors}}
+{% for formset_form in formset %}
+{% if forloop.first %}
+<table class="table table-hover">
+    <colgroup>
+        <col span="1" style="width: 1%" />
+        <col span="1" style="width: 44%" />
+        <col span="1" style="width: 25%" />
+        <col span="1" style="width: 10%" />
+        <col span="1" style="width: 10%" />
+        <col span="1" style="width: 10%" />
+    </colgroup>
+    <thead>
+        <tr>
+            {% for field in formset_form.hidden_fields %}
+            <th hidden>{{ field.label }}</th>
+            {% endfor %}
+            <th></th>
+            {% for field in formset_form.visible_fields %}
+            <th>{{ field.label|upper }}</th>
+            {% endfor %}
+            <th>Mark for Deletion</th>
+        </tr>
+    </thead>
+    <tbody id="formset-container">
+        {% endif %}
+        <tr class="{{ the-multi-item-formset-model }}-form">
+            {{ formset_form.non_field_errors}}
+            {% for field in formset_form.hidden_fields %}
+            <td hidden>
+                {{ field }}
+            </td>
+            {% endfor %}
+            <td class="handle" style="cursor: pointer" id="id_{{ formset_form.prefix }}-draggable"><i
+                    class="bi bi-list"></i></td>
+            {% for field in formset_form.visible_fields %}
+            <td class="p-1">
+                {{ field.errors.as_ul }}
+                {{ field }}
+            </td>
+            {% endfor %}
+            <td><button type="button" class="btn btn-danger mt-2 mt-xl-0"
+                    id="id_{{ formset_form.prefix }}-mark-deleted"><i class="bi bi-trash"></i></button>
+            </td>
+        </tr>
+        {% if forloop.last %}
+        <tr id="empty-{{ the-multi-item-formset-model }}-form" hidden>
+            {% for field in formset.empty_form.hidden_fields %}
+            <td hidden>
+                {{ field }}
+            </td>
+            {% endfor %}
+            <td class="handle" style="cursor: pointer" id="id_{{ the-multi-item-formset-model }}-__prefix__-draggable">
+                <i class="bi bi-list"></i>
+            </td>
+            {% for field in formset.empty_form.visible_fields %}
+            <td class="p-1">
+                {{ field.errors.as_ul }}
+                {{ field }}
+            </td>
+            {% endfor %}
+            <td><button type="button" class="btn btn-danger mt-2 mt-xl-0"
+                    id="id_{{ the-multi-item-formset-model }}-__prefix__-mark-deleted"><i
+                        class="bi bi-trash"></i></button></td>
+        </tr>
+        <tr id="items-for-deletion">
+            <td colspan="2">Items marked for deletion</td>
+            <td colspan="4"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <input id="add-{{ the-multi-item-formset-model }}-form" type="button"
+                    class="btn btn-sm btn-outline-primary" value="Add Another FOMRSET Item" disabled>
+            </td>
+            <td colspan="4"></td>
+        </tr>
+    </tfoot>
+</table>
+{% endif %}
+{% endfor %}
+{% endcomment %}

@@ -1,0 +1,18 @@
+<a href="{{ conversation_thread.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-hb-primary" id="{{ conversation_thread.name }}">
+    <div class="d-flex w-100 justify-content-between">
+        <p class="fs-5 mb-1">{{ conversation_thread.name }}</p>
+        <small>
+            {% if conversation_thread.chat_type == 'web' %}
+            A web based conversation
+            {% elif conversation_thread.chat_type == 'api' %}
+            A native based conversation
+            {% elif conversation_thread.chat_type == 'noa' %}
+            A NOA based conversation
+            {% else %}
+            Unassigned conversation type
+            {% endif %}
+        </small>
+    </div>
+    <p class="mb-1">{{ conversation_thread.summary }}.</p>
+    <small>Created: {{ conversation_thread.created_at|date:"SHORT_DATE_FORMAT" }} by {{ conversation_thread.created_by }}.</small>
+</a>

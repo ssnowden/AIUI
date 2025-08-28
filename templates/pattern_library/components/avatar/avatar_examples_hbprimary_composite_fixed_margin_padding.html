@@ -1,0 +1,97 @@
+{% load static %}
+<h3 class="m-lg-3">User Avatar made up of a number of SVG files with hb-primary colours by
+    including as a templates and fixing the margin/padding through an border-avatar class.</h3>
+<style>
+    .border-avatar {
+        position: relative;
+        padding-top: 3rem;
+        padding-left: 0.25rem;
+        margin: 0.5rem;
+    }
+
+    #eyes1 {
+        position: absolute;
+        left: 6.5rem;
+        top: 4rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        background-color: transparent;
+    }
+
+    #hair1 {
+        position: absolute;
+        left: -0.15rem;
+        top: -5.5rem;
+        height: 17rem;
+        width: 17rem;
+        background-color: transparent;
+    }
+
+    #moustache1 {
+        position: absolute;
+        left: 6.25rem;
+        top: 5.5rem;
+        height: 5rem;
+        width: 5rem;
+        background-color: transparent;
+        fill: darkred;
+    }
+</style>
+<div class="border border-secondary border-avatar rounded" id="avatar-ui-examples-composite">
+    {% include "pattern_library/components/avatar/avatar-head1.svg" with class="avatar avatar-hb-primary" %}
+    {% include "pattern_library/components/avatar/eyes1.svg" with class="avatar avatar-hb-primary" %}
+    {% include "pattern_library/components/avatar/hair1.svg" with class="avatar avatar-hb-primary" %}
+    {% include "pattern_library/components/avatar/moustache1.svg" with class="avatar avatar-hb-primary" %}
+</div>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-examples-primary" class=" alert alert-secondary">
+        {% filter force_escape %}<style>
+            .border-avatar {
+                position: relative;
+                padding-top: 3rem;
+                padding-left: 0.25rem;
+                margin: 0.5rem;
+            }
+
+            #eyes1 {
+                position: absolute;
+                left: 6.5rem;
+                top: 4rem;
+                height: 4.5rem;
+                width: 4.5rem;
+                background-color: transparent;
+            }
+
+            #hair1 {
+                position: absolute;
+                left: -0.15rem;
+                top: -5.5rem;
+                height: 17rem;
+                width: 17rem;
+                background-color: transparent;
+            }
+
+            #moustache1 {
+                position: absolute;
+                left: 6.25rem;
+                top: 5.5rem;
+                height: 5rem;
+                width: 5rem;
+                background-color: transparent;
+                fill: darkred;
+            }
+        </style>
+        <div class="border border-secondary border-avatar rounded" id="avatar-ui-examples-composite">
+            {% verbatim %}{% include "pattern_library/components/avatar/avatar-head1.svg" with class="avatar avatar-hb-primary" %}
+            {% include "pattern_library/components/avatar/eyes1.svg" with class="avatar avatar-hb-primary" %}
+            {% include "pattern_library/components/avatar/hair1.svg" with class="avatar avatar-hb-primary" %}
+            {% include "pattern_library/components/avatar/moustache1.svg" with class="avatar avatar-hb-primary" %}{% endverbatim %}
+        </div>{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">Code for bringing together a number of SVG images. To prevent the
+        SVGs for the eyes hair and moustache collapsing we remove the Bootstrap padding and margin
+        classes and create a new class called <code>avatar-border</code> for styling the div around
+        the avatar SVGs. This defines the position property (rather than targetting the div directly
+        through it's id) along with the margin and padding properties. This appears to solve the issue
+        caused by breakpoints on the Bootstrap margin and padding properties.</figcaption>
+</figure>

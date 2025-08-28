@@ -1,0 +1,21 @@
+<div class="col-2">
+    <nav class="nav flex-column" id="po-pattern-library-nav" aria-label="Pattern Library Navigation">
+        {% if open_nav == "getting-started" %}
+        {% include "pattern_library/getting_started/gettingstarted_nav.html" with show_gettingstarted="True" %}
+        {% else %}
+        {% include "pattern_library/getting_started/gettingstarted_nav.html" with show_gettingstarted="False" %}
+        {% endif %}
+
+        {% if open_nav == "customize" %}
+        {% include "pattern_library/customize/customize_nav.html" with show_customize="True" %}
+        {% else %}
+        {% include "pattern_library/customize/customize_nav.html" with show_customize="False" %}
+        {% endif %}
+
+        {% if open_nav == "components" %}
+        {% include "pattern_library/components/component_nav.html" with show_components="True" %}
+        {% else %}
+        {% include "pattern_library/components/component_nav.html" with show_components="False" %}
+        {% endif %}
+    </nav>
+</div>

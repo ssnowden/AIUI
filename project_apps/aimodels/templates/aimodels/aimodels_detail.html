@@ -1,0 +1,17 @@
+{% extends "_base_detail.html" %}
+{% load static %}
+
+{% block title %}{{ project_name }} - Model Details{% endblock title %}
+
+{% block detail_content %}
+{% include "aimodels/detail/aimodels_detail_header.html" %}
+{% include "aimodels/detail/aimodels_detail_item.html" %}
+<a class="btn btn-hb-primary mt-2" href="{% url 'aimodels' %}">
+    <i class="bi bi-arrow-left-circle"></i> Back to AI Models
+</a>
+{% endblock detail_content %}
+
+{% block extra_body_js %}
+<script src="{% static 'bry/list_detail.py' %}" type="text/python"></script>
+<script src="{% static 'bry/popover_tooltips.py' %}" type="text/python"></script>
+{% endblock extra_body_js %}

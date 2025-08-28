@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Detail Title{% endblock title %}
+
+{% block content %}
+<div class="row w-100 m-lg-5">
+    <div class="col-md-8 mx-auto">
+        <div class="card bg-dark">
+            {% include "includes/card_logo.html" %}
+            <div class="card-body">
+                {% block detail_content %}
+                {% endblock detail_content %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

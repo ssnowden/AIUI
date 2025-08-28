@@ -1,0 +1,9 @@
+{% extends "_base_form.html" %}
+{% load static %}
+
+{% block title %}{{ project_name }} - Model Update{% endblock title %}
+
+{% block form_content %}
+{% include "aimodels/form/aimodels_form.html" with title="Edit AI Model" %}
+{% include "includes/need_help.html" with help_for_text="Need help with editing your AI Model?" %}
+{% endblock form_content %}

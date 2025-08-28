@@ -1,0 +1,15 @@
+<div class="card-body position-relative">
+    {% comment %}
+    <div class="card-text display-5 text-hb-primary-dark2 text-center mt-4">Create a new APP NAME</div>
+    {% endcomment %}
+    <div class="d-flex justify-content-center m-4">
+        {% include "chats/images/empty_chats.html" %}
+    </div>
+    {% comment "CORRECT PATH FOR CREATE url. THEN UNCOMMENT"%}
+    <div class="d-flex justify-content-center mb-4">
+        <a href="{% url 'APPNAME_create' %}" class="btn btn-hb-primary btn-lg text-decoration-none">
+            Create your first APP NAME
+        </a>
+    </div>
+    {% endcomment %}
+</div>

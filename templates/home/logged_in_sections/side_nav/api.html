@@ -1,0 +1,21 @@
+<a class="nav-link" data-bs-toggle="collapse" href="#api-dr" role="button" aria-expanded="false" aria-controls="noa-dr">
+    <i class="bi bi-book me-2"></i>
+    API Conversations
+    <i class="bi bi-chevron-down ms-auto"></i>
+</a>
+<div class="collapse" id="api-dr">
+    <ul class="nav flex-column sub-menu">
+        {% for conversation_thread in api_chats %}
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="bi bi-chat-left-text me-2"></i>
+                {{ conversation_thread.name|truncatechars:25 }}
+            </a>
+        </li>
+        {% empty %}
+        <li class="nav-item">
+            <span class="nav-link text-muted">No conversations yet.</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

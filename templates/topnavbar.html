@@ -1,0 +1,18 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-hb-primary">
+    <div class="container-fluid">
+        <h3>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/navbar-logo-10px.svg' %}" alt="logo" width="50" height="44" class="d-inline-block align-text-centre m-1">
+            </a>
+            {{ project_name }}
+        </h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
+            {% include "topnavbar_dropdown_right.html" %}
+        </div>
+    </div>
+</nav>

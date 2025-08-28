@@ -1,0 +1,34 @@
+{% extends 'pattern_library/_base_pattern_library.html' %}
+{% block page_content %}
+{% include "pattern_library/pagebasics.html" with pagetitle="Welcome to the PROJECT NAME Pattern Library" %}
+<div class="row">
+    {% include "pattern_library/patternlibrarynav.html" with open_nav="getting-started" %}
+    <div class="col-8">
+        <main>
+            <div class="ps-lg-4 m-lg-4">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <h1 class="display-1" id="content">Overview</h1>
+                </div>
+                <p class="lead">Overview for AIUI's core technologies CSS used in Project Orion and how it is used.
+                </p>
+            </div>
+            <section id="using-bootstrap">
+                {% include "pattern_library/getting_started/bootstrap.html" %}
+            </section>
+            <section id="using-popper">
+                {% include "pattern_library/getting_started/popper.html" %}
+            </section>
+            <section id="using-jquery">
+                {% include "pattern_library/getting_started/jquery.html" %}
+            </section>
+            <section id="using-css">
+                {% include "pattern_library/getting_started/css.html" %}
+            </section>
+            <section id="using-javascript">
+                {% include "pattern_library/getting_started/js.html" %}
+            </section>
+        </main>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

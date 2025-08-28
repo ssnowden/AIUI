@@ -1,0 +1,55 @@
+<h3 id="hb-primary-examples" class="m-lg-3">hb-primary</h3>
+<div class="m-lg-2 border border-secondary rounded p-lg-1" id="ui-examples-primary">
+    <table class="table table-hb-primary table-hover">
+        <thead class="text-center">
+            <tr>
+                <th colspan="2">The table header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-hb-primary">
+                <td>The first row in the table body</td>
+                <td>with two columns</td>
+            </tr>
+            <tr class="table-hb-primary">
+                <td colspan="2">The second row in the table body spanning two columns</td>
+            </tr>
+        <tfoot class="text-center">
+            <tr>
+                <th colspan="2">The table footer</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-examples-primary" class="alert alert-secondary">
+        {% filter force_escape %}<table class="table table-hb-primary table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th colspan="2">The table header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-hb-primary">
+                    <td>The first row in the table body</td>
+                    <td>with two columns</td>
+                </tr>
+                <tr class="table-hb-primary">
+                    <td colspan="2">The second row in the table body spanning two columns</td>
+                </tr>
+            <tfoot class="text-center">
+                <tr>
+                    <th colspan="2">The table footer</th>
+                </tr>
+            </tfoot>
+        </table>{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">
+        As with Bootstrap themes, it is just a case of adding the correct HB theme -
+        <code>table-hb-primary</code> - to the
+        <code>class="table ...</code> statement in the table element and.
+        <code>table-hb-primary</code> - to the
+        <code>class="..."</code> statement in the tr element.
+    </figcaption>
+</figure>

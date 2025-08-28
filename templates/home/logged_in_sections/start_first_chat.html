@@ -1,0 +1,27 @@
+{% load static %}
+<div id="replace-chat-container">
+    <div id="replace-new-reponse-prompt">
+        <div class="chat-header pt-3">
+            <div class="card bg-hb-primary border-hb-primary mx-auto" style="max-width: 540px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <img src="{% static 'images/logo-mini.svg' %}" alt="logo" width="40" height="40" class="rounded-circle me-3">
+                            <div>
+                                <h5 class="mb-0">Start Your First Chat</h5>
+                                <small class="text-muted">Get AIUI working</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-hb-primary" id="button-start-first-chat" data-bs-toggle="modal" data-bs-target="#new-chat-modal">
+                                Start a chat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

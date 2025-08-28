@@ -1,0 +1,32 @@
+{% extends 'pattern_library/_base_pattern_library.html' %}
+{% load static %}
+
+{% block hb_components_css %}
+<link rel="stylesheet" href="{% static 'css/hb_avatar.css' %}">
+{% endblock hb_components_css %}
+
+{% block page_content %}
+{% include "pattern_library/pagebasics.html" with pagetitle="Welcome to the PROJECT NAME Pattern Library" %}
+<div class="row">
+    {% include "pattern_library/patternlibrarynav.html" with open_nav="components" %}
+    <div class="col-8">
+        <main>
+            <div class="ps-lg-4 m-lg-4">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <h1 class="display-1" id="content">Avatar</h1>
+                </div>
+                <p class="lead">Project Orion makes great use of the SVG file format. User avatars are one place that
+                    they are used. These allow each user to have a unique identity made up of a number of SVGs overlayed
+                    on one another to provide a single avatar image.</p>
+            </div>
+            <section id="avatar-ui-examples">
+                {% include "pattern_library/components/avatar/avatar_examples.html" %}
+            </section>
+            <section id="avatar-css">
+                {% include "pattern_library/components/avatar/avatar_css.html" %}
+            </section>
+        </main>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

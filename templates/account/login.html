@@ -1,0 +1,23 @@
+{% extends "account/_account_base_form.html" %}
+
+{% block title %}{{ project_name }} Login{% endblock title %}
+
+{% block form_content %}
+<h5 class="card-title text-center">Sign in to continue</h5>
+{% include "includes/form_as_p.html" with form_button_id="signin" form_button_text="Sign In" %}
+<div class="text-center mt-4">
+    Don't have an account?
+    <a href="{% url 'account_signup' %}" class="text-hb-primary text-decoration-none">
+        Then Create One
+    </a>
+</div>
+{% comment %}
+{% include "includes/social_accounts.html" %}
+{% endcomment %}
+<div class="text-center mt-4">
+    Forgot your password?
+    <a href="{% url 'account_reset_password' %}" class="text-hb-primary text-decoration-none">
+        Reset My Password
+    </a>
+</div>
+{% endblock form_content %}

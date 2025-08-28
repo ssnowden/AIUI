@@ -1,0 +1,54 @@
+{% extends "account/_account_base_form.html" %}
+
+{% block title %}{{ project_name }} - My Profile{% endblock title %}
+
+{% block col_class %}class="col-md-9 mx-auto"{% endblock col_class %}
+{% block form_content %}
+<h5 class="card-title text-center">Profile for {{ object.first_name }}
+    {{ object.last_name }}
+</h5>
+<div class="row">
+    <fieldset class="col-lg border p-2 m-2">
+        <legend class="float-none w-auto">
+            <a class="btn btn-outline-hb-primary m-2" id="edit-personal-details" href="{% url 'profile_personal_detail_update' object.uuid %}">
+                Edit Personal Details
+            </a>
+        </legend>
+        <h6 class="card-text"> First Name</h6>
+        <p class="form-control form-control-lg">{{ object.first_name }}</p>
+        <h6 class="card-text"> Last Name</h6>
+        <p class="form-control form-control-lg">{{ object.last_name }}</p>
+        {% if object.is_staff %}
+        <h6 class="card-text">I am a member of Staff</h6>
+        {% endif %}
+        {% if object.is_superuser %}
+        <h6 class="card-text">I am a Super User</h6>
+        {% endif %}
+    </fieldset>
+    <fieldset class="col-lg border p-2 m-2">
+        <legend class="float-none w-auto">
+            <a class="btn btn-outline-hb-primary m-2" id="edit-personal-details" href="{% url 'profile_address_detail_update' object.uuid %}">
+                Edit Address Details
+            </a>
+        </legend>
+        <h6 class="card-text"> Address1</h6>
+        <p class="form-control form-control-lg">{{ object.address1 }}
+        </p>
+        <h6 class="card-text"> Address2</h6>
+        <p class="form-control form-control-lg">{{ object.address2 }}
+        </p>
+        <h6 class="card-text"> Address3</h6>
+        <p class="form-control form-control-lg">{{ object.address3 }}
+        </p>
+        <h6 class="card-text"> Address4</h6>
+        <p class="form-control form-control-lg">{{ object.address4 }}
+        </p>
+    </fieldset>
+</div>
+<a class="btn btn-hb-primary mt-2" href="{% url 'home' %}">
+    Home
+</a>
+<a class="btn btn-hb-primary mt-2" id="edit-personal-details" href="{% url 'custom_password_change' %}">
+    Change password?
+</a>
+{% endblock form_content %}

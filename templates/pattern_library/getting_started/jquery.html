@@ -1,0 +1,18 @@
+<h2 id="jquery">JQuery</h2>
+<p>JQuery is another important JS library for AIUI projects providing tools to manipulate the
+    <a href="https://jquery.com/">DOM</a>, extra <a href="https://jqueryui.com/">UI components</a>
+    (especially the <a href="{% url 'patternlibrary_datepicker' %}">datepicker</a>)
+    and a <a href="https://jquerymobile.com/">mobileUI</a>.
+</p>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-jquery-js" class="alert alert-secondary">
+        {% filter force_escape %}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        {% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">To add JQuery, it is just a case of adding the latest JS for the required elements (shown
+        above is JQuery and JQuery UI) to your page <code>body</code> above the Bootstrap JS declaration.
+    </figcaption>
+</figure>

@@ -1,0 +1,14 @@
+<a href="{{ aimodel.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-hb-primary" id="{{ aimodel.name }}">
+    <div class="d-flex w-100 justify-content-between">
+        <p class="fs-5 mb-1">{{ aimodel.name }}</p>
+        <small>
+            {% if aimodel.is_active %}
+            Model is active
+            {% else %}
+            Model is inactive
+            {% endif %}
+        </small>
+    </div>
+    <p class="mb-1">{{ aimodel.description }}.</p>
+    <small>Created: {{ aimodel.created_at|date:"SHORT_DATE_FORMAT" }} by {{ aimodel.created_by }}.</small>
+</a>

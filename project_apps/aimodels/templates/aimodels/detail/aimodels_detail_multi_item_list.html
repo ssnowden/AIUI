@@ -1,0 +1,19 @@
+{% comment "GIVE THE CORRECT NAME FOR THE RELATED MODEL ITEMS. THEN UNCOMMENT." %}
+<h4>RELATIONAL MODEL NAME</h4>
+{% endcomment %}
+
+{% comment "CORRECT OBJECT NAME. INCLUDE ACTUAL FIELDS FROM RELATED MODEL. THEN UNCOMMENT." %}
+<div class="list-group">
+    {% for item in OBJECT.list_items.all %}
+    <a class="list-group-item list-group-item-action list-group-item-light">
+        {{ list_item.ORDER }}. {{ list_item.text }}
+        {% if list_item.when %}
+        <p class="mb-1 text-muted">This item will take place: {{ list_item.when }}</p>
+        {% endif %}
+    </a>
+    {% empty %}
+    <p class="list-group-item list-group-item-action list-group-item-warning"> No RELATED MODEL NAME for
+        this APP NAME </p>
+    {% endfor %}
+</div>
+{% endcomment %}

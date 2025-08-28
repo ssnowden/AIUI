@@ -1,0 +1,56 @@
+<h2>The _base_list.html Template</h2>
+<p>
+    The <code>_base_list.html</code> template contains all that is required to create a page centred on a list.
+</p>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-bootstrap-js" class="alert alert-secondary">
+        {% filter force_escape %}{% verbatim %}{% extends "_base.html" %}
+        {% block title %}Page title{% endblock title %}
+        {% block content %}
+        {% include "topnavbar.html" %}
+        {% endverbatim %}
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                {% verbatim %}{% block list_content %}
+                {% endblock list_content %}{% endverbatim %}
+            </div>
+        </div>
+        {% verbatim %}{% include "includes/need_help.html" %}{% endverbatim %}
+        {% verbatim %}{% include "footer.html" %}
+        {% endblock content %}{% endverbatim %}{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">
+        <h4>_base_list.html Template Basics</h4>
+        <p>
+            As can be seen this inherits from <code>_base.html</code>. Pages that have a central list then inherit from
+            this using <code>{% verbatim %}{% extends '_base_list.html' %}{% endverbatim %}</code>
+            Django template tag.
+        </p>
+        <p>
+            Then to include html/template code in a section use the block definitions in the same way you would for
+            <code>_base.html</code> and that would include any blocks in <code>_base.html</code> as
+            <code>_base_list.html</code> inherits all of these as well.
+        </p>
+        <h4>Template Blocks for the page <code>head</code></h4>
+        <h5>{% verbatim %}{% block title %}{% endblock title %}{% endverbatim %}</h5>
+        <p>
+            This is a block from the <code>_base.html</code> that is been overidden and is a reminder
+            to overide this block in a specific page.
+        </p>
+        <h4>Template Blocks for the page <code>body</code></h4>
+        <h5>{% verbatim %}{% block list_content %}{% endblock list_content %}{% endverbatim %}</h5>
+        <p>
+            This block provides the space where the page specific HTML for a list is placed. As can be seen
+            As can be seen this block is surrounded by some HTML, two <code>div</code> tags that define a row and a flex
+            box. These are all inside the {% verbatim %}{% block content %}{% endblock content %}{% endverbatim %}
+            block overiding this section in the <code>_base.html</code> template.
+        </p>
+        <p>
+            There are three other interesting interesting <em>molecules</em> inside the
+            {% verbatim %}{% block content %}{% endblock content %}{% endverbatim %} block. These are
+            {% verbatim %}{% include "..." %}{% endverbatim %} statements and pull other template <em>molecules</em>
+            into the <code>_base_list.html</code> <em>Platonic organism</em> template. These <em>molecules</em> will
+            examined further below.
+        </p>
+    </figcaption>
+</figure>

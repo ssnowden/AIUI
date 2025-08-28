@@ -1,0 +1,18 @@
+{% extends "_base_form.html" %}
+{% load static %}
+
+{% block title %}{{ project_name }} - Model Delete{% endblock title %}
+
+{% block form_content %}
+<form class="pt-3" action="" method="post" id="form-container">
+    {% csrf_token %}
+    <h4>Delete AI Model: {{ aimodel }}</h4>
+    <div class="row">
+        <div class="form-control-lg col"> {{ aimodel.description }} </div>
+    </div>
+    <a href="{{ aimodel.get_absolute_url}}" class="btn btn-primary">
+        Cancel
+    </a>
+    {% include "includes/submit_button.html" with button_id="id-delete-model" button_text="Delete" %}
+</form>
+{% endblock form_content %}

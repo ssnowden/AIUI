@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block title %}Page title{% endblock title %}
+{% block content %}
+{% include "topnavbar.html" %}
+<div class="row">
+    <div class="d-flex justify-content-center">
+        {% block list_content %}
+        {% endblock list_content %}
+    </div>
+</div>
+{% include "includes/need_help.html" %}
+</div>
+</div>
+</div>
+{% include "footer.html" %}
+{% endblock content %}

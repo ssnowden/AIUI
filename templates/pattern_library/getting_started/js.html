@@ -1,0 +1,27 @@
+<h2 id="js">Creating Java Script for PROJECT NAME</h2>
+<p> Java Script is a key component of any web app and PROJECT NAME is no different. AIUI does, however, have a
+    unique approach to using JScript. We use a jScript transcitpion tool called
+    <a href="https://brython.info/">Brython</a>.
+</p>
+<p>Brython enables us to use python as a scripting language in the client and so maintain a
+    single coding approach throughout the project. An example of brython code can be seen in the
+    <a href="{% url 'patternlibrary_datepicker' %}">HB datepicker</a> component based on the
+    <a href="https://jqueryui.com/datepicker/">JQuery Datepicker</a>.
+</p>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-brython-js" class="alert alert-secondary">
+        {% filter force_escape %}
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
+        {% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">To add Brython, it is just a case of adding the latest JS for it
+        (above other js libraries) to your page <code>body</code>. You also need to add a Brython statement
+        to the page body element - <code>
+            {% filter force_escape %}
+
+            <body onload="brython()"></body>
+            {% endfilter %}
+        </code>.
+    </figcaption>
+</figure>

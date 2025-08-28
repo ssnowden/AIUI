@@ -1,0 +1,11 @@
+<h4>Details for Conversation: {{ conversation_thread.name }}</h4>
+
+{% comment "CORRECT urls. ALL APPRORPIATE ICONS. THEN UNCOMMENT." %}
+<a href="{% url 'APPNAME_update' conversation_thread.id %}" class="btn btn-hb-primary btn-rounded mt-2 mt-xl-0" id="edit-APPNAME" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit APP NAME">
+    <i class="bi bi-pencil-square"></i>
+</a>
+<a href="{% url 'APPNAME_delete' conversation_thread.id %}" class="btn btn-danger btn-rounded mt-2 mt-xl-0" id="delete-APPNAME" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete APP NAME">
+    <i class="bi bi bi-trash"></i>
+</a>
+{% endcomment %}
+</h4>

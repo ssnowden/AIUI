@@ -1,0 +1,32 @@
+{% load static %}
+<div class="chat-header pt-3" id="chat-model-details">
+    <div class="card bg-hb-primary border-hb-primary mx-auto" style="max-width: 540px;">
+        <div class="card-header">
+            <h4 class="mb-0">{{ latest_conversation.name }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'images/logo-mini.svg' %}" alt="logo" width="40" height="40" class="rounded-circle me-3">
+                <div>
+                    <h5 class="mb-0">{{ latest_conversation.aimodel }}</h5>
+                </div>
+            </div>
+            <div class="card-text mt-3">
+                <div class="row">
+                    {{ latest_conversation.aimodel.description }}
+                </div>
+                <div class="row">
+                    {{ latest_conversation.aimodel.best_use_cases }}
+                </div>
+                <div class="row">
+                    Cost per 1M input tokens:
+                    {{ latest_conversation.aimodel.token_cost_per_1M_input|floatformat:2 }} USD
+                </div>
+                <div class="row">
+                    Cost per 1M output tokens:
+                    {{ latest_conversation.aimodel.token_cost_per_1M_output|floatformat:2 }} USD
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<h2>The _base_detail.html Template</h2>
+<p>
+    The <code>_base_detail.html</code> template contains all that is required to create a page centred the detail for a
+    specific object such as one extracted from the sites database.
+</p>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-bootstrap-js" class="alert alert-secondary">
+        {% filter force_escape %}{% verbatim %}{% extends "_base.html" %}
+        {% block title %}Page title{% endblock title %}
+        {% block content %}
+        {% endverbatim %}
+        <div class="row w-100 m-lg-5">
+            <div class="col-md-8 mx-auto">
+                <div class="card shadow-lg">
+                    {% verbatim %}{% include "includes/card_logo.html" %}{% endverbatim %}
+                    <div class="card-body">
+                        {% verbatim %}{% block detail_content %}
+                        {% endblock detail_content %}{% endverbatim %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% verbatim %}{% endblock content %}{% endverbatim %}{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">
+        <h4>_base_detail.html Template Basics</h4>
+        <p>
+            As can be seen this inherits from <code>_base.html</code>. Pages that have the detail of an abject to
+            display then inherit from this using
+            <code>{% verbatim %}{% extends '_base_detail.html' %}{% endverbatim %}</code>
+            Django template tag.
+        </p>
+        <p>
+            Then to include html/template code in a section use the block definitions in the same way you would for
+            <code>_base.html</code> and that would include any blocks in <code>_base.html</code> as
+            <code>_base_detail.html</code> inherits all of these as well.
+        </p>
+        <h4>Template Blocks for the page <code>head</code></h4>
+        <h5>{% verbatim %}{% block title %}{% endblock title %}{% endverbatim %}</h5>
+        <p>
+            This is a block from the <code>_base.html</code> that is been overidden and is a reminder
+            to overide this block in a specific page.
+        </p>
+        <h4>Template Blocks for the page <code>body</code></h4>
+        <h5>{% verbatim %}{% block detail_content %}{% endblock detail_content %}{% endverbatim %}</h5>
+        <p>
+            This block provides the space where the page specific HTML for an objects detail is placed.
+            As can be seen this block is surrounded by some HTML, four <code>div</code> tags that define a row, col and
+            a Bootstrap card component. These are all inside the
+            {% verbatim %}{% block content %}{% endblock content %}{% endverbatim %}
+            block overiding this section in the <code>_base.html</code> template.
+        </p>
+        <p>
+            There is one other interesting <em>molecule</em> inside the
+            {% verbatim %}{% block content %}{% endblock content %}{% endverbatim %} block. This is a
+            {% verbatim %}{% include "..." %}{% endverbatim %} statement pulling another template <em>molecules</em>
+            into the <code>_base_detail.html</code> <em>Platonic organism</em> template. This <em>molecules</em> will
+            examined further below.
+        </p>
+    </figcaption>
+</figure>

@@ -1,0 +1,8 @@
+{% extends '_base_list.html' %}
+{% block title %}{{ project_name }} - Models{% endblock title %}
+
+{% block list_content %}
+<section class="card col-lg-10 m-md-2 bg-hb-primary-light2">
+    {% include "aimodels/list/aimodels_list.html" %}
+</section>
+{% endblock list_content %}

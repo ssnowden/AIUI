@@ -1,0 +1,176 @@
+<h3>The _base.html Template</h3>
+<p>
+    The <code>_base.html</code> template forms the basis for the whole site. It contains key markers (Django
+    template <code>{% verbatim %}{% block name %}{% endblock name %}{% endverbatim %}</code> tags) that allow for
+    customisation of other pages through the idea of inheritance. These <em><strong>blocks</em></strong> are points in
+    the <em>ideal organism</em> where extra <em>molecules</em> can be inserted to realise a whole new <em>actual</em>
+    organism or form the basis for a new <em>ideal organism</em>.
+</p>
+<p>
+    This provides structure and forms the backbone for subsequent Project Orion templates.
+</p>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-bootstrap-js" class="alert alert-secondary">
+        {% filter force_escape %}{% verbatim %}{% load static %}{% endverbatim %}
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <title>{% verbatim %}{% block title %}Project Orion{% endblock title %}</title>
+            {% verbatim %}{% include "includes/favicons.html" %}{% endverbatim %}
+            {% verbatim %}{% block meta_tags %}{% endverbatim %}
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            {% verbatim %}{% endblock meta_tags %}{% endverbatim %}
+
+            <!-- Global Styles:css -->
+            {% verbatim %}{% block site_css %}{% endverbatim %}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+                crossorigin="anonymous">
+            <link rel="stylesheet"
+                href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+            {% verbatim %}
+            <link rel="stylesheet" href="{% static 'css/hb_primary_branding.css' %}">{% endverbatim %}
+            {% verbatim %}{% endblock site_css %}{% endverbatim %}
+
+            <!-- icons:css -->
+            {% verbatim %}{% block hb_icon_css %}{% endverbatim %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+            {% verbatim %}{% endblock hb_icon_css %}{% endverbatim %}
+
+            <!-- AIUI:component css -->
+            {% verbatim %}{% block hb_components_css %}{% endverbatim %}
+            {% verbatim %}
+            <link rel="stylesheet" href="{% static 'css/hb_avatar.css' %}">{% endverbatim %}
+            {% verbatim %}
+            <link rel="stylesheet" href="{% static 'css/hb_datepicker.css' %}">{% endverbatim %}
+            {% verbatim %}{% endblock hb_components_css %}{% endverbatim %}
+
+            <!-- extras that a page or section may require -->
+            {% verbatim %}{% block extra_head_css %}{% endblock extra_head_css %}{% endverbatim %}
+            {% verbatim %}{% block extra_head %}{% endblock extra_head %}{% endverbatim %}
+        </head>
+
+        <body onload="brython()">
+            <div class="container-scroller">
+                {% verbatim %}{% block content %}{% endverbatim %}
+                <div class="col-lg-4">{% verbatim %}{% block sidebar %}{% endblock %}{% endverbatim %}</div>
+                <div class="col-lg-8">{% verbatim %}{% block main_content %}{% endblock %}{% endverbatim %}</div>
+                {% verbatim %}{% endblock content %}{% endverbatim %}
+                {% verbatim %}{% block modals %}{% endblock modals %}{% endverbatim %}
+            </div>
+
+            {% verbatim %}{% block site_js %}{% endverbatim %}
+            <!-- brython -->
+            <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
+            <!-- jquery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+            <!-- bootstrap -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+                crossorigin="anonymous"></script>
+            {% verbatim %}{% endblock site_js %}{% endverbatim %}
+
+            <!-- extras that a page or section may require -->
+            {% verbatim %}{% block extra_body_js %}{% endblock extra_body_js %}{% endverbatim %}
+            {% verbatim %}{% block extra_body %}{% endblock extra_body %}{% endverbatim %}
+        </body>
+
+        </html>{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">
+        <h4>_base.html Template Basics</h4>
+        <p>
+            The <code>_base.html</code> template contains all that is required in a page. Each
+            subsequent page should inherit this using the
+            <code>{% verbatim %}{% extends '_base.html' %}{% endverbatim %}</code> Django template tag.
+        </p>
+        <p>
+            Then to include html/template code in a section use the block definitions
+            <code>{% verbatim %}{% block content %}{% endblock content %}{% endverbatim %}</code> and place the required
+            code between the block tags.
+        </p>
+        <p>
+            Then to include the html/template code that is in the <code>_base.html</code> block definition use
+            <code>{% verbatim %}{% block meta_tags %}{{ block.super }}{% endblock meta_tags %}{% endverbatim %}</code>
+            and place the required code before or after the <code>super</code> statement as needed.
+        </p>
+        <h4>Template Blocks for the page <code>head</code></h4>
+        <h5>{% verbatim %}{% block title %}{% endblock title %}{% endverbatim %}</h5>
+        <p>
+            This block provides the title for the page that can be seen on the tab of a browser.
+        </p>
+        <h5>{% verbatim %}{% block meta_tags %}{% endblock meta_tags %}{% endverbatim %}</h5>
+        <p>
+            This block are the meta tags for a page. As can be seen this already includes <code>charset</code> and
+            <code>viewport</code> meta tags. This could also include meta tags that aid search engine results displays
+            or even display for Twitter. These should be used with the
+            <code>{% verbatim %}{{ block.super }}{% endverbatim %}</code> statement as mentioned above.
+        </p>
+        <h5>{% verbatim %}{% block site_css %}{% endblock site_css %}{% endverbatim %}</h5>
+        <p>
+            This block has the basic css that will be used for the site. Here this includes bootstrap, jquery and our
+            own <code>hb_primary_branding.css</code>
+        </p>
+        <h5>{% verbatim %}{% block hb_icon_css %}{% endblock hb_icon_css %}{% endverbatim %}</h5>
+        <p>
+            This block contains any icon sets that are being used. If extra icon sets are to be included on a page then
+            use the <code>{% verbatim %}{{ block.super }}{% endverbatim %}</code> statement.
+        </p>
+        <h5>{% verbatim %}{% block hb_components_css %}{% endblock hb_components_css %}{% endverbatim %}</h5>
+        <p>
+            This block will hold any css for specific AIUI components. For an example of this look at the
+            Datepicker component.
+        </p>
+        <h5>{% verbatim %}{% block extra_head_css %}{% endblock extra_head_css %}{% endverbatim %}</h5>
+        <p>
+            This block is for any other css that may be used specific to a page and not coming under any other headings.
+            This allows for good separation of page <em>molecules</em> into well defined sections.
+        </p>
+        <h5>{% verbatim %}{% block extra_head %}{% endblock extra_head %}{% endverbatim %}</h5>
+        <p>
+            This block is anything else that hasn't been captured in previous blocks.
+        </p>
+        <h4>Template Blocks for the page <code>body</code></h4>
+        <h5>{% verbatim %}{% block content %}{% endblock content %}{% endverbatim %}</h5>
+        <p>
+            This block provides the space where the page specific HTML is placed. As can be seen there is already some
+            content here. This means that if using a side bar then you wouldn't use the content block but the other two
+            blocks to contain your HTML. You would typically overwrite this section and not use
+            <code>{% verbatim %}{{ block.super }}{% endverbatim %}</code> to include the code already in the block.
+        </p>
+        <h5>{% verbatim %}{% block sidebar %}{% endblock sidebar %}{% endverbatim %}</h5>
+        <p>
+            This block provides the space where the page specific HTML is placed if you wanted to have a sidebar.
+        </p>
+        <h5>{% verbatim %}{% block main_content %}{% endblock main_content %}{% endverbatim %}</h5>
+        <p>
+            This block provides the space where the page specific HTML is placed for the main content of a page if you
+            are using a side bar.
+        </p>
+        <h5>{% verbatim %}{% block modals %}{% endblock modals %}{% endverbatim %}</h5>
+        <p>
+            This block provides the space where the modal specific HTML is placed. This helps separate modal dialogues
+            from the rest of the HTML making it easier to maintain.
+        </p>
+        <h5>{% verbatim %}{% block site_js %}{% endblock site_js %}{% endverbatim %}</h5>
+        <p>
+            This block encapsulates the javascript for the site. This includes here Brython, jQuery and jQuery UI,
+            Popper, and finally bootstrap. This content is usually critical to the working of a page and should always
+            be used with <code>{% verbatim %}{{ block.super }}{% endverbatim %}</code>.
+        </p>
+        <h5>{% verbatim %}{% block extra_body_js %}{% endblock extra_body_js %}{% endverbatim %}</h5>
+        <p>
+            This block holds any page specific scripts. This would include Brython scripts.
+        </p>
+        <h5>{% verbatim %}{% block extra_body %}{% endblock extra_body %}{% endverbatim %}</h5>
+        <p>
+            This block holds any other elements that should be included in a page's <code>body</code>.
+        </p>
+    </figcaption>
+</figure>

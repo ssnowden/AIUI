@@ -1,0 +1,170 @@
+<h2>Creating a theme</h2>
+<p>
+    Creating a theme is based around the hb_XXX_branding.css files where the XXX is a name for the theme (e.g.
+    primary, section1, fancy_page, etc.)
+</p>
+<p>
+    To create a theme you can either edit one of the existing css files or create a new one.
+</p>
+<p>
+    To edit an existing one choose the file you will edit (e.g. hb_primary_branding.css) and open it.
+    It will look something like this:
+</p>
+<pre>
+    /*------------------------------------
+    - COLOR hb-primary-brand colours
+    - CONTENTS
+
+    -- Base colours in root
+    - SWATCH - individual hsl values with calculations for variations.
+    - key primary colours
+    - alert primary colours
+    - badge primary colours
+    - link button primary colours
+    - btn primary colours
+    - list group item primary colours
+    - table primary colours
+    - link primary colours
+
+    -- Component colours
+    - SWATCH (background-color and color from the light and dark variations)
+    - alert colours
+    - badge colours
+    - link button colours
+    - btn colours
+    - list group item primary colours
+    - table primary colours
+    - link primary colours
+    ------------------------------------*/
+
+    :root {
+    /********** HB PRIMARY **********/
+    /* primary colours base SWATCH HSL values */
+    --hb-primary-swatch-brand-h: 235;
+    --hb-primary-swatch-brand-s: 82%;
+    --hb-primary-swatch-brand-l: 67%;
+    /* primary colours dark variation calculations could be performed on any of hsl. */
+    --hb-primary-swatch-brand-dark1-l-difference: 10%;
+    --hb-primary-swatch-brand-dark2-l-difference: 20%;
+    --hb-primary-swatch-brand-dark3-l-difference: 30%;
+    --hb-primary-swatch-brand-dark4-l-difference: 40%;
+    --hb-primary-swatch-brand-dark1-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    -
+    var(--hb-primary-swatch-brand-dark1-l-difference)
+    );
+    --hb-primary-swatch-brand-dark2-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    -
+    var(--hb-primary-swatch-brand-dark2-l-difference)
+    );
+    --hb-primary-swatch-brand-dark3-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    -
+    var(--hb-primary-swatch-brand-dark3-l-difference)
+    );
+    --hb-primary-swatch-brand-dark4-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    -
+    var(--hb-primary-swatch-brand-dark4-l-difference)
+    );
+    /* primary colours light variation calculations could be performed on any of hsl. */
+    --hb-primary-swatch-brand-light1-l-difference: 8%;
+    --hb-primary-swatch-brand-light2-l-difference: 13%;
+    --hb-primary-swatch-brand-light3-l-difference: 28%;
+    --hb-primary-swatch-brand-light4-l-difference: 33%;
+    --hb-primary-swatch-brand-light1-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    +
+    var(--hb-primary-swatch-brand-light1-l-difference)
+    );
+    --hb-primary-swatch-brand-light2-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    +
+    var(--hb-primary-swatch-brand-light2-l-difference)
+    );
+    --hb-primary-swatch-brand-light3-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    +
+    var(--hb-primary-swatch-brand-light3-l-difference)
+    );
+    --hb-primary-swatch-brand-light4-l: calc(
+    var(--hb-primary-swatch-brand-l)
+    +
+    var(--hb-primary-swatch-brand-light4-l-difference)
+    );
+
+    /* key primary colours SWATCH */
+    --hb-primary-swatch-brand-color: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-l));
+    --hb-primary-swatch-brand-color-dark1: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-dark1-l));
+    --hb-primary-swatch-brand-color-dark2: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-dark2-l));
+    --hb-primary-swatch-brand-color-dark3: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-dark3-l));
+    --hb-primary-swatch-brand-color-dark4: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-dark4-l));
+    --hb-primary-swatch-brand-color-light1: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-light1-l));
+    --hb-primary-swatch-brand-color-light2: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-light2-l));
+    --hb-primary-swatch-brand-color-light3: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-light3-l));
+    --hb-primary-swatch-brand-color-light4: hsl(var(--hb-primary-swatch-brand-h), var(--hb-primary-swatch-brand-s),
+    var(--hb-primary-swatch-brand-light4-l));
+
+    /* key primary colours - after decisions which SWATCH colours to use */
+    --hb-primary-text-color:var(--hb-primary-swatch-brand-color-light4);
+    --hb-primary-alternative-text-color: var(--hb-primary-swatch-brand-color);
+    --hb-primary-background-color: var(--hb-primary-swatch-brand-color);
+    --hb-primary-alternative-background-color: var(--hb-primary-swatch-brand-color-light3);
+    --hb-primary-border-color: var(--hb-primary-swatch-brand-color-dark2);
+    --hb-primary-alternative-border-color: var(--hb-primary-background-color);
+    --hb-primary-focus-hover-background-color: var(--hb-primary-swatch-brand-color-dark1);
+    --hb-primary-box-shadow-color: var(--hb-primary-swatch-brand-color-light1);
+
+    /* COMPONENT Colours */
+    /* alert primary colours */
+    --hb-alert-primary-text-color: var(--hb-primary-alternative-text-color);
+    --hb-alert-primary-background-color: var(--hb-primary-alternative-background-color);
+    --hb-alert-primary-border-color: var(--hb-primary-border-color);
+    --hb-alert-primary-top-border-color: var(--hb-primary-alternative-border-color);
+</pre>
+<p>
+    At the top of the file are the hsl values for the base brand colour and then calculations on values
+    for the light and dark variations. These can be calculations for any of the hsl values that are being
+    changed for the variations and are typically the sl values but could be for the hue value as well.
+    You will also note that the colours for key components are defined in the root selector and there are
+    few parts that can be changed as many of the colours are derived from intial colour settings.
+</p>
+<figure class="m-lg-2 border border-secondary rounded">
+    <p>
+        To create new theme colours start by making a copy of hb_XXX_branding.css file and change the XXX to a name
+        that reflects the theme being created.
+    </p>
+    <p>Then follow the process below:
+
+    <ol class="m-4">
+        <li>
+            Generate a colour for the intial base brand colour, convert that to hsl values and put
+            these into the CSS variables <code>--hb-primary-swatch-brand-h --hb-primary-swatch-brand-s
+                --hb-primary-swatch-brand-l</code> respectively.
+        </li>
+        <li>
+            Dependent upon how you are going to shift the hsl values for the theme variations, create calculation
+            values.
+        </li>
+        <li>
+            Make sure that the correct values are being used in the specific CSS variable for the variant colour (e,g,
+            <code>--hb-primary-swatch-brand-color-dark1</code>)
+        </li>
+        <li>
+            Finally make your choices for the <code>key primary colours</code> (usually best left to a designers eye).
+        </li>
+        <li>
+            Check to see how this looks for each of the components. Adjust as necessary.
+        </li>
+    </ol>
+    </p>
+</figure>

@@ -1,0 +1,9 @@
+{% extends "_base_form.html" %}
+{% load static %}
+
+{% block title %}PROJECT NAME - APP NAME Update{% endblock title %}
+
+{% block form_content %}
+{% include "APP_DIR/form/APP_TEMPLATE_BASE_NAME_form.html" with title="Edit APP NAME" %}
+{% include "includes/need_help.html" with help_for_text="Need help with editing your APP NAME?" %}
+{% endblock form_content %}

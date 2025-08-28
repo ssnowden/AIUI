@@ -1,0 +1,41 @@
+<div class="dropdown">
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-hb-primary dropdown-toggle" data-toggle="dropdown" id="profileDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-fill"></i>
+                <span class="nav-profile-name">{{ user.email }}</span>
+        </button>
+        {% else %}
+        <button type="button" class="btn btn-outline-hb-primary dropdown-toggle" data-toggle="dropdown"
+                id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-x-fill"></i>
+                <span class="nav-profile-name">You are not signed in:</span>
+        </button>
+        {% endif %}
+        <ul class="dropdown-menu list-group-item-hb-primary" aria-labelledby="profileDropdown">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item list-group-item-hb-primary list-group-item-action"
+                                href="{% url 'profile_detail' user.uuid %}" id="profileDetails">Profile</a>
+                </li>
+                <li><a class="dropdown-item list-group-item-hb-primary list-group-item-action"
+                                href="{% url 'account_logout' %}">Sign Out</a></li>
+                {% else %}
+                <li><a class="dropdown-item list-group-item-hb-primary list-group-item-action"
+                                href="{% url 'account_login' %}">Sign in</a></li>
+                <li><a class="dropdown-item list-group-item-hb-primary list-group-item-action"
+                                href="{% url 'account_signup' %}">Sign Up</a></li>
+                {% endif %}
+                {% if user.is_superuser %}
+                <li>
+                        <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item list-group-item-hb-primary list-group-item-action"
+                                href="{% url 'admin:index' %}">Site Admin</a></li>
+                {% endif %}
+                {% if debug %}
+                <li><a class="dropdown-item list-group-item-hb-primary list-group-item-action"
+                                href="{% url 'patternlibrary_overview' %}">Pattern
+                                Library</a></li>
+                {% endif %}
+        </ul>
+</div>

@@ -1,0 +1,9 @@
+<div id="replace-chat-container" hx-get="{% url 'conversationthread_detail' latest_conversation.id %}" hx-trigger="deleteChat from:body" hx-target="#replace-chat-container" hx-swap="outerHTML">
+    {% if latest_conversation %}
+    {% include "home/logged_in_sections/chat_header.html" %}
+    {% include "home/logged_in_sections/chat_thread.html" %}
+    {% include "home/logged_in_sections/chat_prompt.html" %}
+    {% else %}
+    {% include "home/logged_in_sections/start_first_chat.html" %}
+    {% endif %}
+</div>

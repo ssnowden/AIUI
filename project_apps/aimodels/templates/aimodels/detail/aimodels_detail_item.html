@@ -1,0 +1,23 @@
+<div class="fs-3">Description</div>
+<div class="form-control-lg col"> {{ aimodel.description }} </div>
+<div class="fs-3">Best Use Cases</div>
+<div class="form-control-lg col"> {{ aimodel.best_use_cases }} </div>
+<div class="fs-3">Access Mode</div>
+<div class="form-control-lg col"> {{ aimodel.access_mode }} </div>
+<div class="fs-3">Access Endpoint</div>
+<div class="form-control-lg col"> {{ aimodel.access_endpoint }} </div>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Max Tokens</th>
+            <th>Token Cost per 1M Input</th>
+            <th>Token Cost per 1M Output</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{ aimodel.max_tokens }}</td>
+        <td>{{ aimodel.token_cost_per_1M_input }}</td>
+        <td>{{ aimodel.token_cost_per_1M_output }}</td>
+    </tr>
+</table>

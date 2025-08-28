@@ -1,0 +1,17 @@
+{% extends "account/_account_base_form.html" %}
+
+{% block title %}{{ project_name }} Signup{% endblock title %}
+
+{% block form_content %}
+<h5 class="card-title text-center">Sign up</h5>
+<h6>Sign up to continue.</h6>
+<form class="pt-3" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    {% include "includes/submit_button.html" with button_id="signup" button_text="Sign Up" %}
+</form>
+<div class="text-center mt-4">
+    Already have an account? <a href="{% url 'account_login' %}" class="text-hb-primary  text-decoration-none">Login</a>
+</div>
+</form>
+{% endblock form_content %}

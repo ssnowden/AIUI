@@ -1,0 +1,69 @@
+<form class="pt-3" action="" method="post" id="form-container">
+    {% csrf_token %}
+    {{ form.errors }}
+    {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+    {% endfor %}
+
+    <div class="m-4 border p-1" id="page-form">
+        <div class="row my-2">
+            <div class="col-md-2">
+                <h4>{{ title }}</h4>
+            </div>
+            <div class="col-md-7">
+                {{ form.name.label }} {{ form.name.errors.as_ul }} {{ form.name }}
+            </div>
+            <div class="form-check form-switch col-md-3">
+                {{ form.is_active }}
+                <label class="form-check-label m-0">
+                    {{ form.is_active.errors.as_ul }} {{ form.is_active.label }}
+                </label>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.description.label }} {{ form.description.errors.as_ul }} {{ form.description }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.best_use_cases.label }} {{ form.best_use_cases.errors.as_ul }} {{ form.best_use_cases }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.access_mode.label }} {{ form.access_mode.errors.as_ul }} {{ form.access_mode }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.access_endpoint.label }} {{ form.access_endpoint.errors.as_ul }} {{ form.access_endpoint }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.max_tokens.label }} {{ form.max_tokens.errors.as_ul }} {{ form.max_tokens }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.token_cost_per_1M_input.label }} {{ form.token_cost_per_1M_input.errors.as_ul }} {{ form.token_cost_per_1M_input }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form.token_cost_per_1M_output.label }} {{ form.token_cost_per_1M_output.errors.as_ul }} {{ form.token_cost_per_1M_output }}
+            </div>
+        </div>
+    </div>
+
+    {% if 'Add' in title %}
+    <a href="{% url 'aimodels' %}" class="btn btn-hb-primary">Cancel</a>
+    {% include "includes/submit_button.html" with button_id="id-save-model" button_text="Add AI Model" %}
+    {% else %}
+    <a href="{{ object.get_absolute_url }}" class="btn btn-hb-primary">Cancel</a>
+    {% include "includes/submit_button.html" with button_id="id-save-model" button_text="Update AI Model" %}
+    {% endif %}
+
+    {{ form.media }}
+</form>

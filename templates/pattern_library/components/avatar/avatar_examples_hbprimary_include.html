@@ -1,0 +1,16 @@
+{% load static %}
+<h3 id="hb-primary-examples" class="m-lg-3">User Default Avatar With hb-primary colours by including as a template</h3>
+<div class="m-lg-2 border border-secondary rounded p-lg-1" id="ui-examples-primary">
+    {% include "pattern_library/components/avatar/default.svg" with class="avatar avatar-hb-primary" %}
+</div>
+
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-examples-primary" class=" alert alert-secondary">
+        {% verbatim %}{% include "pattern_library/components/avatar/default.svg" with class="avatar avatar-hb-primary" %}{% endverbatim %}
+    </pre>
+    <figcaption class="m-lg-2">Code for using the django template tag <code>include</code> to bring an SVG file into a
+        html document as an inline element. Note the use of the <code>with class="avatar avatar-hb-primary"</code> to
+        impose styling on an svg. This requires <code>{% verbatim %}class="{{ class }}"{% endverbatim %}</code> in the
+        <code>svg</code> tag in the SVG file to process the class variable.
+    </figcaption>
+</figure>

@@ -1,0 +1,12 @@
+{% extends "account/_account_base_form.html" %}
+
+{% block title %}{{ project_name }} Logout{% endblock title %}
+
+{% block form_content %}
+<h5 class="card-title text-center">Sign Out</h5>
+<h6>Are you sure you want to sign out?</h6>
+<form class="pt-3" method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% include "includes/submit_button.html" with button_id="signout" button_text="Sign Out" %}
+</form>
+{% endblock form_content %}

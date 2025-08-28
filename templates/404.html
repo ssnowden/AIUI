@@ -1,0 +1,38 @@
+{% extends "_base_form.html" %}
+
+{% block title %}Error 404 Page Not Found{% endblock title %}
+
+{% block col_class %}class="col-md-6 mx-auto"{% endblock col_class %}
+{% block form_content %}
+{% include "includes/alert_icons.html" %}
+<div class="row">
+    <h1 class="card-title text-center text-warning">
+        OOPS! - Something appears to have gone wrong
+    </h1>
+    <div class="card-text">
+        <p class="lead text-center">
+            The internet hasn't broken but we cannot find what you are looking for.
+        </p>
+        <div class="alert alert-warning" role="alert">
+            <h5 class="alert-heading text-center">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                    <use xlink:href="#info-fill" />
+                </svg>
+                This page appears to have got lost!
+            </h5>
+            <hr>
+            <p>
+                Don't worry, you have tried to access a page that doesn't exist.
+                Return to our <a class="alert-link" href="{% url 'home' %}">homepage</a> and
+                try again.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <a class="btn btn-hb-primary mt-2 col-2" href="{% url 'home' %}">
+        Home
+    </a>
+</div>
+{% include "includes/need_help.html" %}
+{% endblock form_content %}

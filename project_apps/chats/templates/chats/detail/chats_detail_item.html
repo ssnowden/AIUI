@@ -1,0 +1,20 @@
+<div class="form-control-lg col" id="summary">
+    {{ conversation_thread.summary }}
+</div>
+{% if conversation_thread.chat_type == 'web' %}
+<div class="form-control-lg col">
+    A web based conversation thread.
+</div>
+{% elif conversation_thread.chat_type == 'api' %}
+<div class="form-control-lg col">
+    An API based conversation thread.
+</div>
+{% elif conversation_thread.chat_type == 'noa' %}
+<div class="form-control-lg col">
+    An NOA based conversation thread.
+</div>
+{% else %}
+<div class="form-control-lg col">
+    An unknown type of conversation thread.
+</div>
+{% endif %}

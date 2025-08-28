@@ -1,0 +1,18 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Delete Chat</h5>
+        </div>
+        <div class="modal-body">
+            <form class="pt-3" hx-post="{% url 'conversation_thread_delete' conversation_thread.id %}" hx-target="#replace-chats-list" hx-swap="innerHTML" id="chat-delete-form-container">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-control-lg col"> {{ conversation_thread.name }} </div>
+                </div>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                {% include "includes/submit_button_htmx_modal.html" with button_id="id-delete-chat" button_text="Delete chat" %}
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

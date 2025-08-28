@@ -1,0 +1,92 @@
+{% load static %}
+<h3 class="m-lg-3">User Avatar made up of a number of SVG files with hb-primary colours by
+    including as a templates</h3>
+<style>
+    #avatar-ui-examples-composite {
+        position: relative;
+    }
+
+    #eyes1 {
+        position: absolute;
+        left: 6.5rem;
+        top: 4rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        background-color: transparent;
+    }
+
+    #hair1 {
+        position: absolute;
+        left: -0.15rem;
+        top: -5.5rem;
+        height: 17rem;
+        width: 17rem;
+        background-color: transparent;
+    }
+
+    #moustache1 {
+        position: absolute;
+        left: 6.25rem;
+        top: 5.5rem;
+        height: 5rem;
+        width: 5rem;
+        background-color: transparent;
+        fill: darkred;
+    }
+</style>
+<div class="m-lg-2 border border-secondary rounded pt-lg-5 pb-lg-1 pl-lg-1" id="avatar-ui-examples-composite">
+    {% include "pattern_library/components/avatar/avatar-head1.svg" with class="avatar avatar-hb-primary" %}
+    {% include "pattern_library/components/avatar/eyes1.svg" with class="avatar avatar-hb-primary" %}
+    {% include "pattern_library/components/avatar/hair1.svg" with class="avatar avatar-hb-primary" %}
+    {% include "pattern_library/components/avatar/moustache1.svg" with class="avatar avatar-hb-primary" %}
+</div>
+<figure class="m-lg-2 border border-secondary rounded">
+    <pre id="code-examples-primary" class=" alert alert-secondary">
+        {% filter force_escape %}<style>
+            #avatar-ui-examples-composite {
+                position: relative;
+            }
+
+            #eyes1 {
+                position: absolute;
+                left: 6.5rem;
+                top: 4rem;
+                height: 4.5rem;
+                width: 4.5rem;
+                background-color: transparent;
+            }
+
+            #hair1 {
+                position: absolute;
+                left: -0.15rem;
+                top: -5.5rem;
+                height: 17rem;
+                width: 17rem;
+                background-color: transparent;
+            }
+
+            #moustache1 {
+                position: absolute;
+                left: 6.25rem;
+                top: 5.5rem;
+                height: 5rem;
+                width: 5rem;
+                background-color: transparent;
+                fill: darkred;
+            }
+        </style>
+        <div class="m-lg-2 border border-secondary rounded pt-lg-5 pb-lg-1 pl-lg-1" id="avatar-ui-examples-composite">
+            {% verbatim %}{% include "pattern_library/components/avatar/avatar-head1.svg" with class="avatar avatar-hb-primary" %}
+            {% include "pattern_library/components/avatar/eyes1.svg" with class="avatar avatar-hb-primary" %}
+            {% include "pattern_library/components/avatar/hair1.svg" with class="avatar avatar-hb-primary" %}
+            {% include "pattern_library/components/avatar/moustache1.svg" with class="avatar avatar-hb-primary" %}{% endverbatim %}
+        </div>{% endfilter %}
+    </pre>
+    <figcaption class="m-lg-2">Code for bringing together a number of SVG images (Note the <code>position:
+            relative</code> style for
+        the surrounding <code>div</code> element so that the <code>position: absolute</code> works approrpiately on the
+        SVGs). However it should be noted that when the width of the document changes, at a point
+        the composite SVG files move down and to the right. This is due to changes related to
+        Bootstrap breakpoints. Specifically it appears to be the changes to margins and padding changing
+        for specific breakpoints in the border div.</figcaption>
+</figure>

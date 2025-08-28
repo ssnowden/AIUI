@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Form Title{% endblock title %}
+
+{% block content %}
+<div class="row w-100 m-lg-5">
+    <div {% block col_class %}class="col-md-8 mx-auto" {% endblock col_class %}>
+        <div class="card shadow-lg">
+            {% include "includes/card_logo.html" %}
+            <div class="card-body">
+                {% block form_content %}
+                {% endblock form_content %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

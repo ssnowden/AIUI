@@ -1,0 +1,20 @@
+{# filepath: /app/templates/admin/base_site.html #}
+{% extends "admin/base.html" %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    :root {
+        --primary: var(--hb-primary-background-color);
+        --secondary: var(--hb-primary-background-color);
+        --accent: var(--hb-primary-text-color);
+        --primary-fg: var(--hb-primary-swatch-brand-color-dark4);
+        --body-fg: var(--hb-alternative-primary-text-color);
+        --body-bg: var(--hb-primary-alternative-background-color);
+        --header-color: var(--hb-primary-text-color);
+        --header-branding-color: var(--accent);
+        --header-bg: var(--secondary);
+        /* ...add any other variables you want to override... */
+    }
+</style>
+{% endblock %}

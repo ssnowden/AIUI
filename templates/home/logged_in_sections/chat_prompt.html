@@ -1,0 +1,28 @@
+<div class="chat-divider my-3" id="replace-new-reponse-prompt">
+    <!-- Chat Input Form -->
+    <div class="chat-input-form p-3">
+        {% if latest_conversation %}
+
+        <form class="pt-3" id="form-container" method="post" hx-post="{% url 'send_prompt_with_id' latest_conversation.id %}" hx-target="#replace-new-reponse-prompt" hx-swap="outerHTML">
+            {% csrf_token %}
+            {{ form.errors }}
+            {{ form.prompt.errors.as_ul }} {{ form.prompt }}
+            <button class="btn btn-primary" id="button-send" type="submit">
+                <i class="bi bi-send"></i>
+            </button>
+        </form>
+
+        {% else %}
+
+        <form class="pt-3" id="form-container" method="post" hx-post="{% url 'send_prompt' %}" hx-target="#replace-new-reponse-prompt" hx-swap="outerHTML">
+            {% csrf_token %}
+            {{ form.errors }}
+            {{ form.prompt.errors.as_ul }} {{ form.prompt }}
+            <button class="btn btn-primary" id="button-send" type="submit">
+                <i class="bi bi-send"></i>
+            </button>
+        </form>
+
+        {% endif %}
+    </div>
+</div>

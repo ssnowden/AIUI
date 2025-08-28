@@ -1,0 +1,21 @@
+{% extends 'pattern_library/_base_pattern_library.html' %}
+{% block page_content %}
+{% include "pattern_library/pagebasics.html" with pagetitle="Welcome to PROJECT NAME's Pattern Library" %}
+<div class="row">
+    {% include "pattern_library/patternlibrarynav.html" with open_nav="components" %}
+    <div class="col-8">
+        <main>
+            <div class="ps-lg-4 m-lg-4">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <h1 class="display-1" id="content">The Components Name</h1>
+                </div>
+                <p class="lead">HB branding of message for the component.</p>
+            </div>
+            <section id="component-examples">
+                {% include "pattern_library/components/component/component_examples.html" %}
+            </section>
+        </main>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'pattern_library/_base_pattern_library.html' %}
+{% block page_content %}
+{% include "pattern_library/pagebasics.html" with pagetitle="Welcome to the PROJECT NAME Pattern Library" %}
+<div class="row">
+    {% include "pattern_library/patternlibrarynav.html" with open_nav="customize" %}
+    <div class="col-8">
+        <main>
+            <div class="ps-lg-4 m-lg-4">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <h1 class="display-1" id="content">CSS</h1>
+                </div>
+                <p class="lead">Using AIUI's custom css styles for branding + look and feel.</p>
+            </div>
+            <section id="organise-for-development">
+                <h2>Organising during development</h2>
+            </section>
+            <section id="organise-for-production">
+                <h2>Organising for a production environment</h2>
+            </section>
+        </main>
+    </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}

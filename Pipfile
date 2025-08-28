@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=5.2"
+djangorestframework = "*"
+whitenoise = "*"
+gunicorn = "*"
+django-allauth = "*"
+environs = {extras = ["django"], version = "*"}
+psycopg = {extras = ["binary", "pool"], version = "*"}
+mysqlclient = "*"
+docxtpl = "*"
+django-cryptography = "*"
+
+[dev-packages]
+django-debug-toolbar = "*"
+selenium = "==4.12.0"
+coverage = "~=5.5"
+sphinx = "*"
+debugpy = "*"

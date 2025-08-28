@@ -1,0 +1,30 @@
+{% extends 'home/_base_home.html' %}
+{% load static %}
+{% block page_content %}
+{% include "topnavbar.html" %}
+
+{% if user.is_authenticated %}
+<div class="page-body-wrapper">
+    {% include "home/logged_in_sections/sidenavbar.html" %}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            {% include "home/homepage_logged_in.html" %}
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+{% else %}
+<div class="row">
+    <div class="card stretch-card bg-hb-primary-light1 border-hb-primary">
+        <div class="card-body">
+            {% include "home/homepage_not_logged_in.html" %}
+        </div>
+        {% include "includes/need_help.html" %}
+    </div>
+</div>
+{% include "footer.html" %}
+{% endif %}
+{% endblock %}
+{% block extra_body_js %}
+<script src="{% static 'bry/popover_tooltips.py' %}" type="text/python"></script>
+{% endblock extra_body_js %}
