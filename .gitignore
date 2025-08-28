@@ -106,8 +106,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-docker-compose.yml
-docker-compose-prod.yml
 
 # Spyder project settings
 .spyderproject

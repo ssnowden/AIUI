@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command:
+      [
+        "sh",
+        "-c",
+        "pip install debugpy -t /tmp && python /tmp/debugpy --listen 0.0.0.0:5678 /app/manage.py runserver 0.0.0.0:8000"
+      ]
+    # command: python /app/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+      - 5678:5678
+      - 5679:5679
+    depends_on:
+      - db
+  # environment:
+  #   - "DJANGO_SECRET_KEY=<Your-Key-Here>"
+  #   - 'OPEN_AI_MODEL_KEY=<Your-Key-Here>'
+  #   - "ESK=<Your-Key-Here>"
+  #   - "DJANGO_ADMIN=admin/"
+  #   - "DJANGO_DEBUG=True"
+  #   - "DJANGO_ALLOWED_HOSTS=*,localhost,127.0.0.1,"
+  #   - "SECURE_HSTS_SECONDS=0"
+  #   - "SECURE_HSTS_INCLUDE_SUBDOMAINS=False"
+  #   - "SECURE_HSTS_PRELOAD=False"
+  #   - "SESSION_COOKIE_SECURE=False"
+  #   - "CSRF_COOKIE_SECURE=False"
+  #   - "DJANGO_SETTINGS_MODULE=aiui_config.settings"
+  db:
+    image: postgres:17.5
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+  selenium:
+    image: selenium/standalone-chrome-debug:latest
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - 4444:4444
+      - 5900:5900
